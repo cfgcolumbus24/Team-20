@@ -2,9 +2,8 @@
 // essentially saying yes to technical debt in order to get something done
 
 import express from "express";
-import { fetchUser } from "../api.js";
-import { doc, setDoc, getDoc } from "firebase/firestore";
-import { adminDb, firebaseAPIKey } from "../config/firebase.config.js";
+import { fetchUser, setUser } from "../api.js";
+import { firebaseAPIKey } from "../config/firebase.config.js";
 
 const router = express.Router();
 
@@ -46,9 +45,9 @@ router.post("/login", async (req, res) => {
 // https://firebase.google.com/docs/reference/rest/auth/#section-create-email-password
 router.post("/signup", async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, password, name } = req.body;
 
-    if (!email || !password) {
+    if (!email || !password || !name) {
       return res.status(400).json({
         error: "Missing required fields",
       });
@@ -70,7 +69,16 @@ router.post("/signup", async (req, res) => {
     );
 
     const data = await response.json();
-    res.json(data);
+    setUser(data.localId, {
+      email: email,
+      name: name,
+      artStyles: [],
+      cohorts: [],
+      about: "",
+      lookingFor: "",
+    });
+    const user = await fetchUser(data.localId);
+    res.json({ ...user, token: data.idToken });
   } catch (error) {
     console.error("Login error:", error);
     res.status(500).json({ error: "Internal server error" });
