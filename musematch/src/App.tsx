@@ -10,8 +10,9 @@ function App() {
   return (
     <>
       <div>
-        <Navbar />
         <Router>
+        <Navbar />
+
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/login" element={<Login />} />
