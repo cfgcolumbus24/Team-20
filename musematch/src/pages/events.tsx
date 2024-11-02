@@ -87,7 +87,7 @@ const NewEventModal = ({ open, onClose, onCreate }) => {
   const [eventDescription, setEventDescription] = useState("");
   const [tags, setTags] = useState([]);
   const [selectedTags, setSelectedTags] = useState([]);
-  
+
   // Fetch tags from the backend when the component mounts
   useEffect(() => {
     const fetchTags = async () => {
@@ -95,10 +95,10 @@ const NewEventModal = ({ open, onClose, onCreate }) => {
       const data = await response.json();
       setTags(data);
     };
-  
+
     fetchTags();
   }, []);
-  
+
   const handleSubmit = () => {
     const newEvent = {
       name: eventName,
@@ -179,20 +179,20 @@ const NewEventModal = ({ open, onClose, onCreate }) => {
           onChange={(e) => setEventDescription(e.target.value)}
         />
         <Autocomplete
-            multiple
-            options={tags}
-            onChange={(_event, newValue) => {
-                setSelectedTags(newValue);
-            }}
-            renderInput={(params) => (
+          multiple
+          options={tags}
+          onChange={(_event, newValue) => {
+            setSelectedTags(newValue);
+          }}
+          renderInput={(params) => (
             <TextField
-            {...params}
-            variant="outlined"
-            label="Select Tags"
-            placeholder="Tags"
-            margin = "normal"
-        />
-        )}
+              {...params}
+              variant="outlined"
+              label="Select Tags"
+              placeholder="Tags"
+              margin="normal"
+            />
+          )}
         />
 
         <Button
@@ -201,7 +201,6 @@ const NewEventModal = ({ open, onClose, onCreate }) => {
           onClick={handleSubmit}
           disabled={isSubmitDisabled} // Disable button if fields are empty
           sx={{ marginTop: "20px" }}
-
         >
           Request Event
         </Button>

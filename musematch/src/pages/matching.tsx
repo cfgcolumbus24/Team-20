@@ -21,7 +21,7 @@ export const Matching = () => {
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState("");
   const [showMatchPopup, setShowMatchPopup] = useState(false);
-  
+
   //Load in artwork Data
   const artworkData: Artwork[] = [
     {
