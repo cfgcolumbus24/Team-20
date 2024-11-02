@@ -48,7 +48,7 @@ export const Profile = () => {
       "Pottery",
       "Drawing",
       "Architecture",
-      "Design"
+      "Design",
     ]);
   }, []);
 

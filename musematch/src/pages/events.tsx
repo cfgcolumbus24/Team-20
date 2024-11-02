@@ -23,11 +23,13 @@ import dayjs from "dayjs";
 const EventCard = ({ event, onShowDetails, onRSVP }) => (
   <Card sx={{ width: 250, margin: "0 10px" }}>
     <CardContent>
-      <Typography variant="h6">{event.name}</Typography>
-      <Typography variant="body2" color="textSecondary">
+      <Typography variant="h6" noWrap={true}>
+        {event.name}
+      </Typography>
+      <Typography variant="body2" color="textSecondary" noWrap={true}>
         {event.date}
       </Typography>
-      <Typography variant="body2" color="textSecondary">
+      <Typography variant="body2" color="textSecondary" noWrap={true}>
         {event.location}
       </Typography>
     </CardContent>
@@ -69,12 +71,12 @@ const EventDetailsModal = ({ event, open, onClose }) => {
         >
           <CloseIcon />
         </IconButton>
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h5" gutterBottom noWrap={true}>
           {event.name}
         </Typography>
-        <Typography>Date: {event.date}</Typography>
-        <Typography>Location: {event.location}</Typography>
-        <Typography>Description: {event.description}</Typography>
+        <Typography noWrap={true}>Date: {event.date}</Typography>
+        <Typography noWrap={true}>Location: {event.location}</Typography>
+        <Typography noWrap={true}>Description: {event.description}</Typography>
       </Box>
     </Modal>
   );
@@ -127,6 +129,7 @@ const NewEventModal = ({ open, onClose, onCreate }) => {
           left: "50%",
           transform: "translate(-50%, -50%)",
           maxWidth: 500,
+          minWidth: 250,
           width: "90%",
           p: 4,
           bgcolor: "background.paper",
@@ -230,20 +233,24 @@ export const Events = () => {
     {
       name: "TWEED TheaterWorks",
       date: "09-01-2024",
-      location: "6&B Garden, East Village, New York, 10009 (East 6th Street at Avenue B)",
-      description: "TWEED TheaterWorks presents Garden Variety, a free performance series at historic community space 6&B Garden in the East Village. This summer’s series will include music and performance by artists including Ms. Zilbert & Co., Julian Fleisher, Rebecca Havemayer, Angela DeCarlo, Lacy Rose and her Starling Quartet, and Dane Terry. Join us on July 23, August 27, and September 3, 10, & 17 (rain date each following Thursday).",
+      location:
+        "6&B Garden, East Village, New York, 10009 (East 6th Street at Avenue B)",
+      description:
+        "TWEED TheaterWorks presents Garden Variety, a free performance series at historic community space 6&B Garden in the East Village. This summer’s series will include music and performance by artists including Ms. Zilbert & Co., Julian Fleisher, Rebecca Havemayer, Angela DeCarlo, Lacy Rose and her Starling Quartet, and Dane Terry. Join us on July 23, August 27, and September 3, 10, & 17 (rain date each following Thursday).",
     },
     {
       name: "Party as Participation Hosted by Elisabeth Smolarz",
       date: "06-22-2024",
       location: "The Arts Center at Governors Island, Cafe",
-      description: "Accessibility: The Arts Center Cafe and all ferries to Governors Island are wheelchair accessible. Further accessibility and health & safety information can be found here. Celebrate LMCC’s 50th anniversary as Manhattan’s Arts Council and our legacy of fostering vibrant creative communities! Party as Participation is the final installment of Party as Performance, a series of festivities hosted by an LMCC alumni artist who specializes in the art of bringing people together. Elisabeth Smolarz (Arts Center Residency ’12) will present ice cream flavors inspired by her experiences during her 2012 artist residency on Governors Island. These flavors will celebrate the friendships and artist communities she formed during that time, as well as the distinctive features of the island itself, such as the weeping willow tree, the lavender fields, and the beloved Governors Island sheep: Flour, Sam, Evening, Chad, and Philip Aries. The tasting event will offer a culinary journey blending elements of childhood nostalgia, art, and nature. Allergy Note: Ice cream will contain dairy products.",
+      description:
+        "Accessibility: The Arts Center Cafe and all ferries to Governors Island are wheelchair accessible. Further accessibility and health & safety information can be found here. Celebrate LMCC’s 50th anniversary as Manhattan’s Arts Council and our legacy of fostering vibrant creative communities! Party as Participation is the final installment of Party as Performance, a series of festivities hosted by an LMCC alumni artist who specializes in the art of bringing people together. Elisabeth Smolarz (Arts Center Residency ’12) will present ice cream flavors inspired by her experiences during her 2012 artist residency on Governors Island. These flavors will celebrate the friendships and artist communities she formed during that time, as well as the distinctive features of the island itself, such as the weeping willow tree, the lavender fields, and the beloved Governors Island sheep: Flour, Sam, Evening, Chad, and Philip Aries. The tasting event will offer a culinary journey blending elements of childhood nostalgia, art, and nature. Allergy Note: Ice cream will contain dairy products.",
     },
     {
       name: "Tremor – Samita Sinha",
       date: selectedDate.format("MM-DD-YYYY"),
       location: "Federal Hall",
-      description: "This special iteration of Samita Sinha’s Tremor is performed in duet with Cecilia Vicuña. Presented in the resonant space of Federal Hall, Sinha and Vicuña infuse their vibrations and lineages into the dense history and monumentality of the site, opening other ways of sensing, knowing, being, and being together. Their vocalizations are spatialized live by sound designer Daniel Neumann, within a visual design by architect Sunil Bald. Tremor is an emergent and iterative performance and practice. Tremor was co-commissioned by Western Front and Danspace Project, and has been presented at MCA Chicago. Collaborators in previous iterations include Ash Fure, Okwui Okpokwasili, Sunder Ganglani, Darrell Jones, James Proudfoot, and Sarai Frazier. Their contributions have shaped what Tremor is and how it now grows. Performers: Samita Sinha and Cecilia Vicuña Visual Design: Sunil Bald Sound Design: Daniel Neumann Samita Sinha is part of LMCC’s Extended Life Dance Development Program supported, in part, by The Andrew W. Mellon Foundation.",
+      description:
+        "This special iteration of Samita Sinha’s Tremor is performed in duet with Cecilia Vicuña. Presented in the resonant space of Federal Hall, Sinha and Vicuña infuse their vibrations and lineages into the dense history and monumentality of the site, opening other ways of sensing, knowing, being, and being together. Their vocalizations are spatialized live by sound designer Daniel Neumann, within a visual design by architect Sunil Bald. Tremor is an emergent and iterative performance and practice. Tremor was co-commissioned by Western Front and Danspace Project, and has been presented at MCA Chicago. Collaborators in previous iterations include Ash Fure, Okwui Okpokwasili, Sunder Ganglani, Darrell Jones, James Proudfoot, and Sarai Frazier. Their contributions have shaped what Tremor is and how it now grows. Performers: Samita Sinha and Cecilia Vicuña Visual Design: Sunil Bald Sound Design: Daniel Neumann Samita Sinha is part of LMCC’s Extended Life Dance Development Program supported, in part, by The Andrew W. Mellon Foundation.",
     },
   ]);
 
@@ -310,6 +317,8 @@ export const Events = () => {
               sx={{
                 display: "flex",
                 overflowX: "auto",
+                justifyContent: "flex-start",
+                flexWrap: "wrap",
                 gap: 2,
                 pb: 2,
                 maxWidth: "100%",
@@ -331,8 +340,9 @@ export const Events = () => {
             </Typography>
             <Box
               sx={{
-                display: "grid",
-                gridTemplateColumns: "repeat(3, 1fr)",
+                display: "flex",
+                justifyContent: "flex-start",
+                flexWrap: "wrap",
                 overflowY: "auto",
                 maxHeight: 400, // adjust as needed
                 gap: 2,
