@@ -5,6 +5,7 @@ import { Login } from "./pages/login";
 import { Navbar } from "./components/navbar";
 import { Connections } from "./pages/connections";
 import { Matching } from "./pages/matching";
+import { Profile } from "./pages/user-profile";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/connections" element={<Connections />} />
               <Route path="/matching" element={<Matching />} />
+              <Route path="/user-profile" element={<Profile />} />
             </Routes>
           </div>
         </Router>
