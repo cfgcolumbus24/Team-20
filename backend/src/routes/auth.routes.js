@@ -2,12 +2,16 @@
 // essentially saying yes to technical debt in order to get something done
 
 import express from "express";
-import { firebaseAPIKey } from "../config/firebase.config.js";
+import { doc, setDoc, getDoc } from "firebase/firestore";
+import { adminDb, firebaseAPIKey } from "../config/firebase.config.js";
 
 const router = express.Router();
 
-router.get("/test", (req, res) => {
-  
+router.get("/test", async (req, res) => {
+  // const user = getDoc(doc(db, "users", "odZR3p2Eun9jjiPFSAyR"));
+  const user = adminDb.doc("/users/odZR3p2Eun9jjiPFSAyR").get();
+  // user: https://firebase.google.com/docs/reference/js/v8/firebase.firestore.QueryDocumentSnapshot
+  console.log((await user).data()); 
 });
 
 // https://firebase.google.com/docs/reference/rest/auth/#section-sign-in-email-password
