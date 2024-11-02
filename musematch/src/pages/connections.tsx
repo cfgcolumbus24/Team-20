@@ -4,13 +4,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import TextField from "@mui/material/TextField";
 import { ExpandMore } from "@mui/icons-material";
 import {
-  Title,
   Box,
   FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  FormLabel,
   RadioGroup,
   FormControlLabel,
   Radio,
@@ -30,9 +25,6 @@ import * as React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 
-const userCard = () => {
-  <div></div>;
-};
 const SearchBar = ({ setSearchQuery }) => (
   <form>
     <TextField
@@ -347,6 +339,7 @@ export const Connections = () => {
             <SearchBar
               searchQuery={searchQuery}
               setSearchQuery={setSearchQuery}
+              style={{position: "static"}}
             />
           </div>
           <CardContainer />
