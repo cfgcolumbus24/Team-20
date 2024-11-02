@@ -250,8 +250,9 @@ export const CardContainer = () => {
                   Bony Ramirez
                 </Typography>
                 <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                  Bony Ramirez is a self-taught artist. In his latest solo exhibition in the Newark Museum of Art,
-                  he used surrealism to probe the legacies of colonialism and tourism.
+                  Bony Ramirez is a self-taught artist. In his latest solo
+                  exhibition in the Newark Museum of Art, he used surrealism to
+                  probe the legacies of colonialism and tourism.
                 </Typography>
               </CardContent>
               <CardActions>
@@ -281,9 +282,10 @@ export const CardContainer = () => {
                   Cansu Yıldıran
                 </Typography>
                 <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                  Cansu Yıldıran is a photographer from Istanbul. They
-                  are one of the twenty exceptional artists featured in the Foam Talent 
-                  2024-2025 Group Exhibition and Foam Magazine Talent 2024-2025 Issue. 
+                  Cansu Yıldıran is a photographer from Istanbul. They are one
+                  of the twenty exceptional artists featured in the Foam Talent
+                  2024-2025 Group Exhibition and Foam Magazine Talent 2024-2025
+                  Issue.
                 </Typography>
               </CardContent>
               <CardActions>
@@ -302,8 +304,9 @@ export const CardContainer = () => {
                   Emily Manwaring
                 </Typography>
                 <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                  Emily Manwaringo is an artist who lives and works in Brooklyn, NY. She
-                  is a graduate of The Cooper Union for the Advancement of Science and Art.
+                  Emily Manwaringo is an artist who lives and works in Brooklyn,
+                  NY. She is a graduate of The Cooper Union for the Advancement
+                  of Science and Art.
                 </Typography>
               </CardContent>
               <CardActions>
