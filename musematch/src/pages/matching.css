@@ -43,6 +43,7 @@ html {
   align-items: center;
   padding: 20px;
   margin-top: 70px;
+  margin-bottom: 20px;
   z-index: 3;
   gap: 10px;
 }

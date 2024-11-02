@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink as Link } from "react-router-dom";
 import React from "react";
 import { FaHome, FaUser, FaUsers, FaLink, FaHandshake } from "react-icons/fa"; // Import icons from react-icons
 import "./navbar.css";
