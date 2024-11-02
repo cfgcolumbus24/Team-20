@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Container,
@@ -11,6 +11,7 @@ import {
   CardActions,
   Modal,
   Grid,
+  Autocomplete,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
@@ -84,6 +85,19 @@ const NewEventModal = ({ open, onClose, onCreate }) => {
   const [eventDate, setEventDate] = useState(dayjs());
   const [eventLocation, setEventLocation] = useState("");
   const [eventDescription, setEventDescription] = useState("");
+  const [tags, setTags] = useState([]);
+  const [selectedTags, setSelectedTags] = useState([]);
+
+  // Fetch tags from the backend when the component mounts
+  useEffect(() => {
+    const fetchTags = async () => {
+      const response = await fetch("/api/tags");
+      const data = await response.json();
+      setTags(data);
+    };
+
+    fetchTags();
+  }, []);
 
   const handleSubmit = () => {
     const newEvent = {
@@ -91,6 +105,7 @@ const NewEventModal = ({ open, onClose, onCreate }) => {
       date: eventDate.format("MM-DD-YYYY"),
       location: eventLocation,
       description: eventDescription,
+      tags: selectedTags,
     };
     onCreate(newEvent); // Notify parent without adding to lists
     alert("Request submitted"); // Alert message for submission
@@ -163,11 +178,29 @@ const NewEventModal = ({ open, onClose, onCreate }) => {
           value={eventDescription}
           onChange={(e) => setEventDescription(e.target.value)}
         />
+        <Autocomplete
+          multiple
+          options={tags}
+          onChange={(_event, newValue) => {
+            setSelectedTags(newValue);
+          }}
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              variant="outlined"
+              label="Select Tags"
+              placeholder="Tags"
+              margin="normal"
+            />
+          )}
+        />
+
         <Button
           variant="contained"
           color="primary"
           onClick={handleSubmit}
           disabled={isSubmitDisabled} // Disable button if fields are empty
+          sx={{ marginTop: "20px" }}
         >
           Request Event
         </Button>
@@ -195,22 +228,22 @@ export const Events = () => {
   const [showNewEvent, setShowNewEvent] = useState(false);
   const [events, setEvents] = useState([
     {
-      name: "Event 1",
-      date: "11-15-2024",
-      location: "Location 1",
-      description: "Details of event 1",
+      name: "TWEED TheaterWorks",
+      date: "09-01-2024",
+      location: "6&B Garden, East Village, New York, 10009 (East 6th Street at Avenue B)",
+      description: "TWEED TheaterWorks presents Garden Variety, a free performance series at historic community space 6&B Garden in the East Village. This summer’s series will include music and performance by artists including Ms. Zilbert & Co., Julian Fleisher, Rebecca Havemayer, Angela DeCarlo, Lacy Rose and her Starling Quartet, and Dane Terry. Join us on July 23, August 27, and September 3, 10, & 17 (rain date each following Thursday).",
     },
     {
-      name: "Event 2",
-      date: "11-15-2024",
-      location: "Location 2",
-      description: "Details of event 2",
+      name: "Party as Participation Hosted by Elisabeth Smolarz",
+      date: "06-22-2024",
+      location: "The Arts Center at Governors Island, Cafe",
+      description: "Accessibility: The Arts Center Cafe and all ferries to Governors Island are wheelchair accessible. Further accessibility and health & safety information can be found here. Celebrate LMCC’s 50th anniversary as Manhattan’s Arts Council and our legacy of fostering vibrant creative communities! Party as Participation is the final installment of Party as Performance, a series of festivities hosted by an LMCC alumni artist who specializes in the art of bringing people together. Elisabeth Smolarz (Arts Center Residency ’12) will present ice cream flavors inspired by her experiences during her 2012 artist residency on Governors Island. These flavors will celebrate the friendships and artist communities she formed during that time, as well as the distinctive features of the island itself, such as the weeping willow tree, the lavender fields, and the beloved Governors Island sheep: Flour, Sam, Evening, Chad, and Philip Aries. The tasting event will offer a culinary journey blending elements of childhood nostalgia, art, and nature. Allergy Note: Ice cream will contain dairy products.",
     },
     {
-      name: "Event 3",
+      name: "Tremor – Samita Sinha",
       date: selectedDate.format("MM-DD-YYYY"),
-      location: "Location 3",
-      description: "Details of event 3",
+      location: "Federal Hall",
+      description: "This special iteration of Samita Sinha’s Tremor is performed in duet with Cecilia Vicuña. Presented in the resonant space of Federal Hall, Sinha and Vicuña infuse their vibrations and lineages into the dense history and monumentality of the site, opening other ways of sensing, knowing, being, and being together. Their vocalizations are spatialized live by sound designer Daniel Neumann, within a visual design by architect Sunil Bald. Tremor is an emergent and iterative performance and practice. Tremor was co-commissioned by Western Front and Danspace Project, and has been presented at MCA Chicago. Collaborators in previous iterations include Ash Fure, Okwui Okpokwasili, Sunder Ganglani, Darrell Jones, James Proudfoot, and Sarai Frazier. Their contributions have shaped what Tremor is and how it now grows. Performers: Samita Sinha and Cecilia Vicuña Visual Design: Sunil Bald Sound Design: Daniel Neumann Samita Sinha is part of LMCC’s Extended Life Dance Development Program supported, in part, by The Andrew W. Mellon Foundation.",
     },
   ]);
 
@@ -243,11 +276,11 @@ export const Events = () => {
   };
 
   return (
-    <Container maxWidth={false} sx={{ px: 4, py: 2, maxWidth: "1280px", margin: "0 auto", pb: 6}}>
+    <Container maxWidth={false} sx={{ px: 4, py: 2 }}>
       <Grid container spacing={2}>
         {/* Left Section with Search and Event List */}
         <Grid item xs={12} md={8}>
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 2, pt: 4}}>
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             <TextField
               fullWidth
               placeholder="Search..."

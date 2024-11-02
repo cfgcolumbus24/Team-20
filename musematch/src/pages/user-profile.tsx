@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   Container,
   TextField,
@@ -9,27 +9,47 @@ import {
   Autocomplete,
 } from "@mui/material";
 import "./user-profile.css";
+import { TokenContext, apiURL } from "../App";
+import { Navigate } from "react-router-dom";
+
+
 
 export const Profile = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [aboutMe, setAboutMe] = useState("");
-  const [lookingFor, setLookingFor] = useState("");
-  const [profilePicture, setProfilePicture] = useState<
-    string | ArrayBuffer | null
-  >(null);
+
+  const [name, setName] = useState("John Smith");
+  const [email, setEmail] = useState("john.smith@test.com");
+  const [aboutMe, setAboutMe] = useState("Aspiring artist in music, underground rapper on the come up tryna make it out the mud.");
+  const [lookingFor, setLookingFor] = useState("Established artists in the NYC area I can work with.");
   const [tags, setTags] = useState<string[]>([]);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const { token } = useContext(TokenContext);
 
   useEffect(() => {
     // Fetch tags from your API and set them in the tags state
-    const fetchTags = async () => {
-      const response = await fetch("/api/tags"); // Adjust the URL as needed
-      const data = await response.json();
-      setTags(data);
-    };
+    // const fetchTags = async () => {
+    //   const response = await fetch(`${apiURL}/api/info/artStyles`); // Adjust the URL as needed
+    //   const data = await response.json();
+    //   setTags(data);
+    // };
 
-    fetchTags();
+    // fetchTags();
+
+    setTags([
+      "Painting",
+      "Theater",
+      "Performing Arts",
+      "Photography",
+      "Music",
+      "Abstract Art",
+      "Impressionism",
+      "Literature",
+      "Sculpture",
+      "Cinematography",
+      "Pottery",
+      "Drawing",
+      "Architecture",
+      "Design"
+    ]);
   }, []);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -55,8 +75,8 @@ export const Profile = () => {
     }
   };
 
-  return (
-    <Container maxWidth="sm" sx={{paddingBottom: 5, paddingTop: 5}}>
+  return token ? (
+    <Container maxWidth="sm" sx={{ paddingBottom: 5, paddingTop: 5 }}>
       <Box
         sx={{
           bgcolor: "white",
@@ -76,11 +96,12 @@ export const Profile = () => {
           id="profile-picture-upload"
           type="file"
           onChange={handleImageChange}
+
         />
 
         <label htmlFor="profile-picture-upload">
           <Avatar
-            src={profilePicture as string}
+            src={"https://images.squarespace-cdn.com/content/v1/631ba8eed2196a6795698665/3690ca61-6a9d-4c93-a2a5-83a5f2aa1648/2022-08-16-Trinet-0540-Martinez-Juan.jpg"}
             sx={{
               width: 100,
               height: 100,
@@ -156,5 +177,7 @@ export const Profile = () => {
         </form>
       </Box>
     </Container>
+  ) : (
+    <Navigate to={"/login"} replace={true} />
   );
 };

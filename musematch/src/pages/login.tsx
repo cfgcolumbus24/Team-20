@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Box,
   Container,
   FormControlLabel,
@@ -10,17 +9,49 @@ import {
   Button,
   Grid,
   Link,
-  SvgIcon,
 } from "@mui/material";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import { Link as RouterLink } from "react-router-dom";
+import { Navigate, Link as RouterLink } from "react-router-dom";
 import logo from "../assets/LMCC-50Logo-Blue-Smaller.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { TokenContext, apiURL } from "../App";
 
 const LoginPage = () => {
   const [signUp, setSignUp] = useState(false);
-  const handleSubmit = () => console.log("login");
-  return (
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const { token, setToken } = useContext(TokenContext);
+
+  const handleSubmit = async () => {
+    // let response = await fetch(
+    //   signUp ? `${apiURL}/auth/signup` : `${apiURL}/auth/login`,
+    //   {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(
+    //       signUp
+    //         ? {
+    //             email: email,
+    //             password: password,
+    //             name: name,
+    //           }
+    //         : { email: email, password: password }
+    //     ),
+    //   }
+    // );
+
+    // const data = await response.json();
+    // console.log(data);
+
+    // demo login
+    if (email == "john.smith@test.com" && password == "password123") {
+      setToken("hi");
+    }
+  };
+
+  return token == null ? (
     <Container maxWidth="xs" sx={{ padding: 5 }}>
       <Paper elevation={10} sx={{ marginTop: 8, marginBottom: 8, padding: 2 }}>
         <div
@@ -40,9 +71,12 @@ const LoginPage = () => {
         >
           Sign In
         </Typography>
-        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+        <Box component="form" noValidate sx={{ mt: 1 }}>
           <TextField
             placeholder="Enter email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
             fullWidth
             required
             autoFocus
@@ -50,6 +84,9 @@ const LoginPage = () => {
           />
           <TextField
             placeholder="Enter password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
             fullWidth
             required
             type="password"
@@ -59,13 +96,14 @@ const LoginPage = () => {
           {signUp && (
             <>
               <TextField
-                placeholder="First Name"
+                placeholder="Name"
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
                 fullWidth
                 required
                 sx={{ mb: 2 }}
               />
-
-              <TextField placeholder="Last Name" fullWidth required />
             </>
           )}
 
@@ -73,7 +111,16 @@ const LoginPage = () => {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <Button type="submit" variant="contained" fullWidth sx={{ mt: 1 }}>
+          <Button
+            type="submit"
+            variant="contained"
+            fullWidth
+            sx={{ mt: 1 }}
+            onClick={(e) => {
+              e.preventDefault();
+              handleSubmit();
+            }}
+          >
             {signUp ? "Sign up" : "Log in"}
           </Button>
         </Box>
@@ -93,6 +140,8 @@ const LoginPage = () => {
         </Grid>
       </Paper>
     </Container>
+  ) : (
+    <Navigate to={"/user-profile"} replace={true} />
   );
 };
 

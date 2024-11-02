@@ -42,6 +42,25 @@ router.post("/login", async (req, res) => {
   }
 });
 
+router.post("/user", async (req, res) => {
+  try {
+    const { token } = req.body;
+
+    if (!token) {
+      return res.status(400).json({
+        error: "Missing required fields",
+      });
+    }
+
+    const data = await getId(token);
+    const user = await fetchUser(data.localId);
+    res.json({ ...user });
+  } catch (error) {
+    console.error("Login error:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
 // https://firebase.google.com/docs/reference/rest/auth/#section-create-email-password
 router.post("/signup", async (req, res) => {
   try {
