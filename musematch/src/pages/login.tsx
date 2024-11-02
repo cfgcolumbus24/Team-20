@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Box,
   Container,
   FormControlLabel,
@@ -10,9 +9,7 @@ import {
   Button,
   Grid,
   Link,
-  SvgIcon,
 } from "@mui/material";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { Link as RouterLink } from "react-router-dom";
 import logo from "../assets/LMCC-50Logo-Blue-Smaller.png";
 import { useState } from "react";
