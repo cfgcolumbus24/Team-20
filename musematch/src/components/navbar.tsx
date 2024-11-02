@@ -24,12 +24,12 @@ export const Navbar: React.FC = () => {
         <NavLink to="/connections" className="nav-link">
           <FaLink size="1.1em" className="icon" /> Connections
         </NavLink>
-          <NavLink to="/login" className="nav-link">
-            <FaUser size="1.1em" className="icon" /> Login
-          </NavLink>
         <NavLink to="/matching" className="nav-link">
           <FaHandshake size="1.1em" className="icon" /> Matching
         </NavLink>
+          <NavLink to="/login" className="nav-link">
+            <FaUser size="1.1em" className="icon" /> Login
+          </NavLink>
       </div>
     </nav>
   );
