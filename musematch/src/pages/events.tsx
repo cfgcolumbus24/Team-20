@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Container,
@@ -11,6 +11,7 @@ import {
   CardActions,
   Modal,
   Grid,
+  Autocomplete,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
@@ -84,13 +85,27 @@ const NewEventModal = ({ open, onClose, onCreate }) => {
   const [eventDate, setEventDate] = useState(dayjs());
   const [eventLocation, setEventLocation] = useState("");
   const [eventDescription, setEventDescription] = useState("");
-
+  const [tags, setTags] = useState([]);
+  const [selectedTags, setSelectedTags] = useState([]);
+  
+  // Fetch tags from the backend when the component mounts
+  useEffect(() => {
+    const fetchTags = async () => {
+      const response = await fetch("/api/tags");
+      const data = await response.json();
+      setTags(data);
+    };
+  
+    fetchTags();
+  }, []);
+  
   const handleSubmit = () => {
     const newEvent = {
       name: eventName,
       date: eventDate.format("MM-DD-YYYY"),
       location: eventLocation,
       description: eventDescription,
+      tags: selectedTags,
     };
     onCreate(newEvent); // Notify parent without adding to lists
     alert("Request submitted"); // Alert message for submission
@@ -163,11 +178,30 @@ const NewEventModal = ({ open, onClose, onCreate }) => {
           value={eventDescription}
           onChange={(e) => setEventDescription(e.target.value)}
         />
+        <Autocomplete
+            multiple
+            options={tags}
+            onChange={(_event, newValue) => {
+                setSelectedTags(newValue);
+            }}
+            renderInput={(params) => (
+            <TextField
+            {...params}
+            variant="outlined"
+            label="Select Tags"
+            placeholder="Tags"
+            margin = "normal"
+        />
+        )}
+        />
+
         <Button
           variant="contained"
           color="primary"
           onClick={handleSubmit}
           disabled={isSubmitDisabled} // Disable button if fields are empty
+          sx={{ marginTop: "20px" }}
+
         >
           Request Event
         </Button>
@@ -243,11 +277,11 @@ export const Events = () => {
   };
 
   return (
-    <Container maxWidth={false} sx={{ px: 4, py: 2, maxWidth: "1280px", margin: "0 auto", pb: 6}}>
+    <Container maxWidth={false} sx={{ px: 4, py: 2 }}>
       <Grid container spacing={2}>
         {/* Left Section with Search and Event List */}
         <Grid item xs={12} md={8}>
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 2, pt: 4}}>
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             <TextField
               fullWidth
               placeholder="Search..."
