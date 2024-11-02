@@ -102,12 +102,12 @@ html {
 
 /*Artwork!*/
 .artwork-section {
-  width: 40%;
-  text-align: left;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    width: 40%;
+    text-align: left;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .artwork-image-container:hover .artwork-title {
@@ -115,9 +115,9 @@ html {
 }
 
 .artwork-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 2fr);
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 20px;
 }
 
 .artwork-image {
@@ -143,14 +143,14 @@ html {
 }
 
 .artist-title {
-  font-size: 1.5rem;
-  color: navy;
-  position: relative;
-  z-index: 10;
-  margin: 10px 0;
-  font-weight: bold;
-  text-align: center;
-  font-style: italic;
+    font-size: 1.5rem;
+    color: navy;
+    position: relative; 
+    z-index: 10; 
+    margin: 10px 0; 
+    font-weight: bold;
+    text-align: center;
+    font-style: italic;
 }
 
 .artwork-title {
@@ -210,14 +210,14 @@ html {
     background-color: #ffffff; /* Background color for contrast */
   }
 
-  .App {
-    flex-direction: column;
-    align-items: stretch;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    min-height: 100vh;
-    width: 100%;
-  }
+    .App {
+        flex-direction: column;
+        align-items: stretch;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        min-height: 100vh;
+        width: 100%;
+    }
 
   .card {
     margin: 0 auto 30px;
@@ -264,11 +264,11 @@ html {
     margin-top: 15px; /* Ensures space above like/dislike buttons */
   }
 
-  .artwork-section {
-    width: 100%;
-    text-align: center;
-    padding: 0;
-  }
+    .artwork-section {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
 
   .artwork-gallery {
     grid-template-columns: 1fr 1fr;
