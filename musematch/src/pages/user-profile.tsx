@@ -34,9 +34,17 @@ export const Profile = () => {
 
   return (
     <Container maxWidth="sm">
-      <Box mt={4}>
+      <Box 
+        sx={{
+          bgcolor: 'white',
+          borderRadius: 2,
+          boxShadow: 1,
+          p: 3, // Padding for the entire box
+          mt: 4 // Margin top for spacing
+        }}
+      >
         <Typography variant="h4" className="profile-title" gutterBottom>
-        Alumni Profile
+          Alumni Profile
         </Typography>
         
         <input
