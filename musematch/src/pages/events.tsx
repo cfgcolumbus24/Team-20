@@ -243,11 +243,11 @@ export const Events = () => {
   };
 
   return (
-    <Container maxWidth={false} sx={{ px: 4, py: 2 }}>
+    <Container maxWidth={false} sx={{ px: 4, py: 2, maxWidth: "1280px", margin: "0 auto", pb: 6}}>
       <Grid container spacing={2}>
         {/* Left Section with Search and Event List */}
         <Grid item xs={12} md={8}>
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 2, pt: 4}}>
             <TextField
               fullWidth
               placeholder="Search..."
