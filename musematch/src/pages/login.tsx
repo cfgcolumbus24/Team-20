@@ -23,28 +23,28 @@ const LoginPage = () => {
   const { token, setToken } = useContext(TokenContext);
 
   const handleSubmit = async () => {
-    let response = await fetch(
-      signUp ? `${apiURL}/auth/signup` : `${apiURL}/auth/login`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(
-          signUp
-            ? {
-                email: email,
-                password: password,
-                name: name,
-              }
-            : { email: email, password: password }
-        ),
-      }
-    );
+    // let response = await fetch(
+    //   signUp ? `${apiURL}/auth/signup` : `${apiURL}/auth/login`,
+    //   {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(
+    //       signUp
+    //         ? {
+    //             email: email,
+    //             password: password,
+    //             name: name,
+    //           }
+    //         : { email: email, password: password }
+    //     ),
+    //   }
+    // );
 
-    const data = await response.json();
-    console.log(data);
-    setToken(data.token);
+    // const data = await response.json();
+    // console.log(data);
+    setToken("hi");
   };
 
   return token == null ? (
