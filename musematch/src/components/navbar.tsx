@@ -27,6 +27,7 @@ export const Navbar: React.FC = () => {
         <Link to="/user-profile" className="nav-link">
           <FaUser size="1.1em" className="icon" /> User Profile
         </Link>
+        <Link to="/matching">Matching</Link>
       </div>
     </nav>
   );

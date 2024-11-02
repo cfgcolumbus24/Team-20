@@ -24,6 +24,11 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Content spacing to avoid overlap with fixed navbar */
+.content {
+  padding-top: 80px; /* Adjust this value to add space below the navbar */
+}
+
 /* Logo styling */
 .logo {
   height: 6em;
@@ -62,3 +67,4 @@
 .read-the-docs {
   color: #888;
 }
+
