@@ -72,7 +72,7 @@ export const Main = () => {
       maxWidth="lg"
       style={{
         paddingTop: "80px",
-        padding: "16px", // Added padding here
+        padding: "32px", // Increased padding here
         overflow: "hidden",
         maxHeight: "calc(150vh - 80px)",
       }}
