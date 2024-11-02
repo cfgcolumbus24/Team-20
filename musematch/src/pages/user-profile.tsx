@@ -26,13 +26,30 @@ export const Profile = () => {
 
   useEffect(() => {
     // Fetch tags from your API and set them in the tags state
-    const fetchTags = async () => {
-      const response = await fetch(`${apiURL}/api/info/artStyles`); // Adjust the URL as needed
-      const data = await response.json();
-      setTags(data);
-    };
+    // const fetchTags = async () => {
+    //   const response = await fetch(`${apiURL}/api/info/artStyles`); // Adjust the URL as needed
+    //   const data = await response.json();
+    //   setTags(data);
+    // };
 
-    fetchTags();
+    // fetchTags();
+
+    setTags([
+      "Painting",
+      "Theater",
+      "Performing Arts",
+      "Photography",
+      "Music",
+      "Abstract Art",
+      "Impressionism",
+      "Literature",
+      "Sculpture",
+      "Cinematography",
+      "Pottery",
+      "Drawing",
+      "Architecture",
+      "Design"
+    ]);
   }, []);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
