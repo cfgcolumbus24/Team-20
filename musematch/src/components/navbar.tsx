@@ -18,8 +18,8 @@ export const Navbar: React.FC = () => {
         <Link to="/" className="nav-link">
           <FaHome size="1.1em" className="icon" /> Home
         </Link>
-        <Link to="/find-people" className="nav-link">
-          <FaUsers size="1.1em" className="icon" /> Find People
+        <Link to="/events" className="nav-link">
+          <FaUsers size="1.1em" className="icon" /> Events
         </Link>
         <Link to="/connections" className="nav-link">
           <FaLink size="1.1em" className="icon" /> Connections

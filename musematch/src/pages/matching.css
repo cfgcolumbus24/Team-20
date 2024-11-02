@@ -7,6 +7,13 @@ html {
     display: flex;
     justify-content: center; /* Horizontally center the box */
     align-items: center; /* Vertically center the box */
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
     background-color: #ffffff; /* Background color for contrast */
     background-image: linear-gradient(180deg, #a7efff, #2fbdff);
 }

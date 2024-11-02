@@ -339,6 +339,7 @@ export const Connections = () => {
             <SearchBar
               searchQuery={searchQuery}
               setSearchQuery={setSearchQuery}
+              style={{position: "static"}}
             />
           </div>
           <CardContainer />
