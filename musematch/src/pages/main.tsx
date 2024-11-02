@@ -56,7 +56,7 @@ export const Main = () => {
   return (
     <Container
       maxWidth="lg"
-      style={{ paddingTop: '80px', overflow: 'hidden', maxHeight: 'calc(100vh - 80px)' }}
+      style={{ paddingTop: '80px', overflow: 'hidden', maxHeight: 'calc(150vh - 80px)' }}
     >
       <Typography variant="h4" gutterBottom>
         Alumni Community Feed
@@ -68,7 +68,7 @@ export const Main = () => {
           height: 'calc(100vh - 120px)', // Adjust as necessary for header and padding
           overflowY: 'auto',
           scrollbarWidth: 'none', // Firefox
-          '-ms-overflow-style': 'none', // IE and Edge
+          'msOverflowStyle': 'none', // IE and Edge
         }}
       >
         <style>{`

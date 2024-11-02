@@ -15,7 +15,7 @@ function App() {
         <Router>
           <Navbar />
           <div style={{display: 'flex', justifyContent: 'center'}}>
-            <div style={{'max-width': '1280px'}}>
+            <div style={{'maxWidth': '1280px'}}>
               <Routes>
                 <Route path="/" element={<Main />} />
                 <Route path="/login" element={<Login />} />
