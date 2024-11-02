@@ -29,7 +29,7 @@ export async function isValid(localId, token) {
 
 export async function getId(token) {
   try {
-    const ecoded = await admin.auth().verifyIdToken(token);
+    const decoded = await admin.auth().verifyIdToken(token);
     return decoded.uid;
   } catch (error) {
     throw error;

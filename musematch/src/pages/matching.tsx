@@ -1,8 +1,6 @@
 import { useState } from "react";
-// import { FaHeart } from "react-icons/fa";
 import { IoMdCheckboxOutline } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
-//import { ImCross } from "react-icons/im";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import logo from "./logo.png";
