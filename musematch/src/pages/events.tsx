@@ -31,8 +31,12 @@ const EventCard = ({ event, onShowDetails, onRSVP }) => (
       </Typography>
     </CardContent>
     <CardActions>
-      <Button size="small" onClick={onShowDetails}>More Details</Button>
-      <Button size="small" variant="contained" onClick={onRSVP}>RSVP</Button>
+      <Button size="small" onClick={onShowDetails}>
+        More Details
+      </Button>
+      <Button size="small" variant="contained" onClick={onRSVP}>
+        RSVP
+      </Button>
     </CardActions>
   </Card>
 );
@@ -64,7 +68,9 @@ const EventDetailsModal = ({ event, open, onClose }) => {
         >
           <CloseIcon />
         </IconButton>
-        <Typography variant="h5" gutterBottom>{event.name}</Typography>
+        <Typography variant="h5" gutterBottom>
+          {event.name}
+        </Typography>
         <Typography>Date: {event.date}</Typography>
         <Typography>Location: {event.location}</Typography>
         <Typography>Description: {event.description}</Typography>
@@ -120,7 +126,9 @@ const NewEventModal = ({ open, onClose, onCreate }) => {
         >
           <CloseIcon />
         </IconButton>
-        <Typography variant="h5" gutterBottom>Create New Event</Typography>
+        <Typography variant="h5" gutterBottom>
+          Create New Event
+        </Typography>
         <TextField
           label="Event Name"
           fullWidth
@@ -186,11 +194,26 @@ export const Events = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [showNewEvent, setShowNewEvent] = useState(false);
   const [events, setEvents] = useState([
-    { name: "Event 1", date: "11-15-2024", location: "Location 1", description: "Details of event 1" },
-    { name: "Event 2", date: "11-15-2024", location: "Location 2", description: "Details of event 2" },
-    { name: "Event 3", date: selectedDate.format("MM-DD-YYYY"), location: "Location 3", description: "Details of event 3" },
+    {
+      name: "Event 1",
+      date: "11-15-2024",
+      location: "Location 1",
+      description: "Details of event 1",
+    },
+    {
+      name: "Event 2",
+      date: "11-15-2024",
+      location: "Location 2",
+      description: "Details of event 2",
+    },
+    {
+      name: "Event 3",
+      date: selectedDate.format("MM-DD-YYYY"),
+      location: "Location 3",
+      description: "Details of event 3",
+    },
   ]);
-  
+
   const [rsvpEvents, setRsvpEvents] = useState([]);
 
   const filteredEvents = events.filter((event) =>
@@ -211,8 +234,11 @@ export const Events = () => {
   };
 
   const handleRSVP = (event) => {
-    if (!rsvpEvents.some(rsvpEvent => rsvpEvent.name === event.name)) {
-      setRsvpEvents(prev => [...prev, { name: event.name, date: event.date }]);
+    if (!rsvpEvents.some((rsvpEvent) => rsvpEvent.name === event.name)) {
+      setRsvpEvents((prev) => [
+        ...prev,
+        { name: event.name, date: event.date },
+      ]);
     }
   };
 
@@ -236,11 +262,17 @@ export const Events = () => {
                 ),
               }}
             />
-            <Button variant="contained" color="primary" onClick={() => setShowNewEvent(true)}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => setShowNewEvent(true)}
+            >
               Add New Event
             </Button>
 
-            <Typography variant="h6" sx={{ mt: 4 }}>Recommended Events</Typography>
+            <Typography variant="h6" sx={{ mt: 4 }}>
+              Recommended Events
+            </Typography>
             <Box
               sx={{
                 display: "flex",
@@ -261,7 +293,9 @@ export const Events = () => {
               ))}
             </Box>
 
-            <Typography variant="h6" sx={{ mt: 4 }}>Events on {selectedDate.format("MM-DD-YYYY")}</Typography>
+            <Typography variant="h6" sx={{ mt: 4 }}>
+              Events on {selectedDate.format("MM-DD-YYYY")}
+            </Typography>
             <Box
               sx={{
                 display: "grid",
@@ -271,27 +305,35 @@ export const Events = () => {
                 gap: 2,
               }}
             >
-              {events.filter(event => event.date === selectedDate.format("MM-DD-YYYY")).map((event, index) => (
-                <EventCard
-                  key={index}
-                  event={event}
-                  onShowDetails={() => handleShowDetails(event)}
-                  onRSVP={() => handleRSVP(event)}
-                />
-              ))}
+              {events
+                .filter(
+                  (event) => event.date === selectedDate.format("MM-DD-YYYY")
+                )
+                .map((event, index) => (
+                  <EventCard
+                    key={index}
+                    event={event}
+                    onShowDetails={() => handleShowDetails(event)}
+                    onRSVP={() => handleRSVP(event)}
+                  />
+                ))}
             </Box>
           </Box>
         </Grid>
 
         {/* Right Section with Mini Calendar */}
         <Grid item xs={12} md={4}>
-          <Typography variant="h6" sx={{ mb: 2 }}>Calendar</Typography>
+          <Typography variant="h6" sx={{ mb: 2 }}>
+            Calendar
+          </Typography>
           <MiniCalendar
             selectedDate={selectedDate}
             onDateChange={setSelectedDate}
           />
 
-          <Typography variant="h6" sx={{ mt: 4 }}>RSVP'd Events</Typography>
+          <Typography variant="h6" sx={{ mt: 4 }}>
+            RSVP'd Events
+          </Typography>
           <Box>
             {rsvpEvents.length > 0 ? (
               rsvpEvents.map((event, index) => (

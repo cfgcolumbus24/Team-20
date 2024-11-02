@@ -1,62 +1,61 @@
 /* Footer container styling */
 .footer {
-    background-color: #333;
-    color: #fff;
-    padding: 2rem 1rem;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-  
-  .footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  /* Logo styling */
-  .footer-logo h3 {
-    margin: 0;
-    color: #61dafb;
-    font-size: 1.5rem;
-  }
-  
-  /* Footer links styling */
-  .footer-links {
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  .footer-link {
-    color: #61dafb;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .footer-link:hover {
-    color: #b0e0e6;
-  }
-  
-  /* Social media icons */
-  .footer-social {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .social-icon {
-    color: #61dafb;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .social-icon:hover {
-    color: #b0e0e6;
-  }
-  
-  /* Bottom copyright styling */
-  .footer-bottom {
-    margin-top: 1rem;
-    font-size: 0.8rem;
-    color: #bbb;
-  }
-  
+  background-color: #333;
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Logo styling */
+.footer-logo h3 {
+  margin: 0;
+  color: #61dafb;
+  font-size: 1.5rem;
+}
+
+/* Footer links styling */
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-link {
+  color: #61dafb;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: #b0e0e6;
+}
+
+/* Social media icons */
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  color: #61dafb;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #b0e0e6;
+}
+
+/* Bottom copyright styling */
+.footer-bottom {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #bbb;
+}

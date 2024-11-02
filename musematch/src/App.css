@@ -1,12 +1,13 @@
 /* Root container styling */
 #root {
   margin: none;
-  
-  width: 100vw !important
+
+  width: 100vw !important;
 }
 
 /* Reset background color, margins, and padding on html and body */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   background-color: transparent;
@@ -38,11 +39,10 @@ html, body {
   /* max-width: 1280px; /* Limits the navbar width */
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
 }
 
-/* Content spacing to avoid overlap with fixed navbar */ */
- .content {
+/* Content spacing to avoid overlap with fixed navbar */
+*/ .content {
   flex: 1;
   padding-top: 110px;
   padding-bottom: 0;
@@ -51,21 +51,20 @@ html, body {
 }
 
 .navbar-spacing {
-  margin-top: 380px
+  margin-top: 380px;
 }
 
 @media only screen and (min-width: 782px) {
   .navbar-spacing {
-    margin-top: 285px
+    margin-top: 285px;
   }
 }
 
 @media only screen and (min-width: 948px) {
   .navbar-spacing {
-    margin-top: 235px
+    margin-top: 235px;
   }
 }
-
 
 /* Footer styling */
 .footer {
@@ -127,6 +126,3 @@ html, body {
   font-size: 0.8rem;
   color: #ffffff;
 }
-
-
-

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Container,
   TextField,
@@ -6,15 +6,17 @@ import {
   Typography,
   Box,
   Avatar,
-} from '@mui/material';
+} from "@mui/material";
 import "./user-profile.css";
 
 export const Profile = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [aboutMe, setAboutMe] = useState('');
-  const [lookingFor, setLookingFor] = useState('');
-  const [profilePicture, setProfilePicture] = useState<string | ArrayBuffer | null>(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [aboutMe, setAboutMe] = useState("");
+  const [lookingFor, setLookingFor] = useState("");
+  const [profilePicture, setProfilePicture] = useState<
+    string | ArrayBuffer | null
+  >(null);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -34,35 +36,40 @@ export const Profile = () => {
 
   return (
     <Container maxWidth="sm">
-      <Box 
+      <Box
         sx={{
-          bgcolor: 'white',
+          bgcolor: "white",
           borderRadius: 2,
           boxShadow: 1,
           p: 3, // Padding for the entire box
-          mt: 4 // Margin top for spacing
+          mt: 4, // Margin top for spacing
         }}
       >
         <Typography variant="h4" className="profile-title" gutterBottom>
           Alumni Profile
         </Typography>
-        
+
         <input
           accept="image/*"
-          style={{ display: 'none' }}
+          style={{ display: "none" }}
           id="profile-picture-upload"
           type="file"
           onChange={handleImageChange}
         />
-        
+
         <label htmlFor="profile-picture-upload">
           <Avatar
             src={profilePicture as string}
-            sx={{ width: 100, height: 100, margin: '0 auto', cursor: 'pointer' }}
+            sx={{
+              width: 100,
+              height: 100,
+              margin: "0 auto",
+              cursor: "pointer",
+            }}
           />
         </label>
 
-        <form onSubmit={handleSubmit} style={{ marginTop: '20px' }}>
+        <form onSubmit={handleSubmit} style={{ marginTop: "20px" }}>
           <TextField
             label="Name"
             variant="outlined"

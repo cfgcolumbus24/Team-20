@@ -6,15 +6,15 @@ import { Navbar } from "./components/navbar";
 import { Footer } from "./components/footer"; // Import Footer
 import { Connections } from "./pages/connections";
 import { Matching } from "./pages/matching";
-import {Events} from "./pages/events";
+import { Events } from "./pages/events";
 import { Profile } from "./pages/user-profile";
 
 function App() {
   return (
     <>
-      <div style={{height:'100%', width: '100%'}}>
+      <div style={{ height: "100%", width: "100%" }}>
         <Router>
-          <Navbar/>
+          <Navbar />
           <div className="content">
             <Routes>
               <Route path="/" element={<Main />} />
@@ -23,9 +23,9 @@ function App() {
               <Route path="/connections" element={<Connections />} />
               <Route path="/matching" element={<Matching />} />
               <Route path="/user-profile" element={<Profile />} />
-              </Routes>
-            </div>
-          <Footer/>
+            </Routes>
+          </div>
+          <Footer />
         </Router>
       </div>
     </>
@@ -33,7 +33,3 @@ function App() {
 }
 
 export default App;
-
-
-
-

@@ -208,7 +208,7 @@ export const CardContainer = () => {
     <React.Fragment>
       <CssBaseline />
       <Container className="overflow-auto" style={{ maxHeight: 600 }}>
-        <Container maxWidth="lg" style={{marginBottom: 20}}>
+        <Container maxWidth="lg" style={{ marginBottom: 20 }}>
           <div
             style={{
               display: "flex",
@@ -339,7 +339,7 @@ export const Connections = () => {
             <SearchBar
               searchQuery={searchQuery}
               setSearchQuery={setSearchQuery}
-              style={{position: "static"}}
+              style={{ position: "static" }}
             />
           </div>
           <CardContainer />
