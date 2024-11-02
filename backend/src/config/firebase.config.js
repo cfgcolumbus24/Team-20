@@ -1,5 +1,4 @@
 var admin = require("firebase-admin");
-require("dotenv").config();
 
 var adminAccount = require("../../firebaseAdminKey.json");
 
