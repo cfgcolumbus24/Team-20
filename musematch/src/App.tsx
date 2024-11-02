@@ -9,10 +9,10 @@ import { Matching } from "./pages/matching";
 function App() {
   return (
     <>
-      <div>
+      <div style={{height:'100%'}}>
         <Router>
           <Navbar />
-          <div className="content">
+          <div>
             <Routes>
               <Route path="/" element={<Main />} />
               <Route path="/login" element={<Login />} />
