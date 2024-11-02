@@ -30,9 +30,6 @@ import * as React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 
-const userCard = () => {
-  <div></div>;
-};
 const SearchBar = ({ setSearchQuery }) => (
   <form>
     <TextField
@@ -347,6 +344,7 @@ export const Connections = () => {
             <SearchBar
               searchQuery={searchQuery}
               setSearchQuery={setSearchQuery}
+              style={{position: "static"}}
             />
           </div>
           <CardContainer />

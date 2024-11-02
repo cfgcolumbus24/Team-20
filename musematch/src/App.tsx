@@ -5,6 +5,7 @@ import { Login } from "./pages/login";
 import { Navbar } from "./components/navbar";
 import { Connections } from "./pages/connections";
 import { Matching } from "./pages/matching";
+import {Events} from "./pages/events";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Main />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/events" element={<Events />} />
               <Route path="/connections" element={<Connections />} />
               <Route path="/matching" element={<Matching />} />
             </Routes>

@@ -6,7 +6,6 @@ html, body {
     display: flex;
     justify-content: center; /* Horizontally center the box */
     align-items: center; /* Vertically center the box */
-    background-color: #5a0404; /* Background color for contrast */
 }
 
 #root {
