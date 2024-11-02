@@ -1,4 +1,3 @@
-import React from 'react';
 import { Card, CardContent, Typography, Container, Paper, Stack } from '@mui/material';
 
 const feedPosts = [
