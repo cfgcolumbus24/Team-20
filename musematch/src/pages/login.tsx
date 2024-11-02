@@ -44,7 +44,11 @@ const LoginPage = () => {
 
     // const data = await response.json();
     // console.log(data);
-    setToken("hi");
+
+    // demo login
+    if (email == "john.smith@test.com" && password == "password123") {
+      setToken("hi");
+    }
   };
 
   return token == null ? (
