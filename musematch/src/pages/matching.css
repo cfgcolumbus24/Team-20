@@ -1,4 +1,5 @@
-html, body {
+
+html {
     height: 100%;
     width: 100%;
     margin: 0;
@@ -13,16 +14,18 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+    background-color: #ffffff; /* Background color for contrast */
+    background-image: linear-gradient(180deg, #a7efff, #2fbdff);
 }
 
 .App {
   text-align: center;
   width: 100vw;
-  height: 100vh;
-  background-image: linear-gradient(180deg, #a7efff, #2fbdff);
+  /* height: 80vh; */
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
 
 .card {
@@ -39,11 +42,11 @@ html, body {
 
 .pfp-image {
   width: auto;
-  max-width: 90%;
+  max-width: 70%;
   height: auto;
   margin: 15px auto;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 50%;
 }
 
 .person-name {
@@ -93,4 +96,191 @@ html, body {
 
 .like-dislike:hover {
   transform: scale(1.1);
+}
+
+/*Artwork!*/
+.artwork-section {
+    width: 60%;
+    text-align: left;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.artwork-image-container:hover .artwork-title {
+    opacity: 1;
+}
+
+.artwork-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.artwork-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.artwork-image-container {
+    position: relative;
+    width: 200px; /* Adjust size as needed */
+    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.artwork-image-container:hover {
+    transform: scale(1.05);
+}
+
+.artist-title {
+    font-size: 1.5rem;
+    color: navy;
+    position: relative; 
+    z-index: 10; 
+    margin: 10px 0; 
+    font-weight: bold;
+    text-align: center;
+}
+
+.artwork-title {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    color: #242769;
+    font-weight: bold;
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* White background on hover */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 5px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.artwork-image-container:hover .artwork-title {
+    opacity: 1;
+}
+
+.artwork-hover-title {
+    font-size: 1.5rem;
+    color: #242769;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.custom-modal .modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1050; /* Ensure it appears above other content */
+    width: 80%;
+    max-width: 500px;
+}
+
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.5); /* Dim background behind modal */
+}
+
+/*Responsive design for Small Screens*/
+
+@media (max-width: 700px) {
+    
+    html, body {
+        margin: 0;
+        padding: 0;
+        /* min-height: 100vh; */
+        display: flex;
+        justify-content: center; /* Horizontally center the box */
+        align-items: flex-start; /* Vertically center the box */
+        background-color: #ffffff; /* Background color for contrast */
+    }
+
+    .App {
+        flex-direction: column;
+        align-items: stretch;
+        padding-top: 300px;
+        padding-bottom: 20px;
+        min-height: 100vh;
+        width: 100%;
+    }
+
+    .card {
+        margin: 0 auto 30px;
+        background-color: white;
+        width: 80%; /* Expands to take most of the screen */
+        height: auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .pfp-image {
+        width: 50%;
+        height: auto;
+        margin: 10px auto;
+        object-fit: contain;
+        border-radius: 50%;
+      }
+
+    .person-name {
+        font-size: 1.5rem;
+    }
+
+    .about-me {
+        font-size: 1rem;
+    }
+
+    .tag {
+        font-size: 0.8rem;
+    }
+
+    .like-dislike {
+        width: 50px;
+        height: auto;
+    }
+
+    .like-dislike-container {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 15px; /* Ensures space above like/dislike buttons */
+    }
+
+    .artwork-section {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .artwork-gallery {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .artwork-image-container {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px; /* Space between artworks */
+    }
+
+    .artwork-image {
+        width: 80%; /* Ensures the artwork resizes correctly */
+    }
+
 }

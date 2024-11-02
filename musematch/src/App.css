@@ -1,70 +1,132 @@
 /* Root container styling */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  margin: none;
+  
+  width: 100vw !important
 }
 
-/* Navbar container styling */
+/* Reset background color, margins, and padding on html and body */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+/* Wrapper to handle the layout and footer positioning */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+}
+
+/* Navbar styling */
 .navbar {
   display: flex;
-  justify-content: center; /* Centers the navbar content */
+  justify-content: center;
   align-items: center;
   background-color: white;
-  padding: 1rem;
+  padding: 3rem 3rem; /* Increased padding for a bit more space */
   border-bottom: 1px solid #ddd;
   position: static;
+  /* margin-bottom: 10px; */
   top: 0;
   left: 50%;
-  transform: translateX(-50%); /* Centers the navbar on the page */
+  transform: translateX(-50%);
   width: 100%;
+  /* max-width: 1280px; /* Limits the navbar width */
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
 }
 
-/* Content spacing to avoid overlap with fixed navbar */
-/* .content {
-  padding-top: 80px; /* Adjust this value to add space below the navbar */
-/*} */
-
-/* Logo styling */
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Content spacing to avoid overlap with fixed navbar */ */
+ .content {
+  flex: 1;
+  padding-top: 110px;
+  padding-bottom: 0;
+  width: 100%;
+  max-width: 1280px;
 }
 
-/* Logo spin animation */
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.navbar-spacing {
+  margin-top: 380px
+}
+
+@media only screen and (min-width: 782px) {
+  .navbar-spacing {
+    margin-top: 285px
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media only screen and (min-width: 948px) {
+  .navbar-spacing {
+    margin-top: 235px
   }
 }
 
-/* Card styling */
-.card {
-  padding: 2em;
+
+/* Footer styling */
+.footer {
+  background-color: #007bff;
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.read-the-docs {
-  color: #888;
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
+
+.footer-logo h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: #b0e0e6;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #b0e0e6;
+}
+
+.footer-bottom {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #ffffff;
+}
+
+
 

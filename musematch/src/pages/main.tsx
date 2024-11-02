@@ -1,6 +1,8 @@
+import "./Matching.css";
+
 export const Main = () => {
   return (
-    <div>
+    <div className="App">
       <h1>main</h1>
     </div>
   );
