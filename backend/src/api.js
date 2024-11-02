@@ -3,7 +3,7 @@ import { admin, adminDb } from "./config/firebase.config.js";
 export async function fetchUser(localId) {
   try {
     const user = await adminDb.doc(`/users/${localId}`).get();
-    return await user.data();
+    return user.data();
   } catch (error) {
     throw error;
   }
@@ -29,8 +29,17 @@ export async function isValid(localId, token) {
 
 export async function getId(token) {
   try {
-    const decoded = await admin.auth().verifyIdToken(token);
+    const ecoded = await admin.auth().verifyIdToken(token);
     return decoded.uid;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function fetchEvent(id) {
+  try {
+    const event = await adminDb.doc(`/events/${id}`).get();
+    return event.data();
   } catch (error) {
     throw error;
   }
