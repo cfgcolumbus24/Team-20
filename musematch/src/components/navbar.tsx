@@ -27,14 +27,15 @@ export const Navbar: React.FC = () => {
           <FaLink size="1.1em" className="icon" />
           <span className="hidden md:inline-block">Connections</span>
         </Link>
-        <Link to="/user-profile" className="nav-link">
-          <FaUser size="1.1em" className="icon" />
-          <span className="hidden md:inline-block">User Profile</span>
-        </Link>
         <Link to="/matching" className="nav-link">
           <FaHandshake size="1.1em" className="icon" />
           <span className="hidden md:inline-block">Matching</span>
         </Link>
+        <Link to="/user-profile" className="nav-link">
+          <FaUser size="1.1em" className="icon" />
+          <span className="hidden md:inline-block">User Profile</span>
+        </Link>
+        
       </div>
     </nav>
   );
