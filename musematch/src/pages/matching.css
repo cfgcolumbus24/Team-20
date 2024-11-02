@@ -1,5 +1,5 @@
 
-html, body {
+html {
     height: 100%;
     width: 100%;
     margin: 0;
@@ -8,20 +8,13 @@ html, body {
     justify-content: center; /* Horizontally center the box */
     align-items: center; /* Vertically center the box */
     background-color: #ffffff; /* Background color for contrast */
-}
-
-#root {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background-image: linear-gradient(180deg, #a7efff, #2fbdff);
 }
 
 .App {
   text-align: center;
   width: 100vw;
   /* height: 80vh; */
-  background-image: linear-gradient(180deg, #a7efff, #2fbdff);
   display: flex;
   justify-content: center;
   align-items: center;

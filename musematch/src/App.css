@@ -1,9 +1,8 @@
 /* Root container styling */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  margin: none;
+  
+  width: 100vw !important
 }
 
 /* Navbar container styling */
@@ -15,20 +14,25 @@
   padding: 1rem;
   border-bottom: 1px solid #ddd;
   position: static;
+  /* margin-bottom: 10px; */
   top: 0;
   left: 50%;
   transform: translateX(-50%); /* Centers the navbar on the page */
   width: 100%;
-  /*max-width: 1280px; /* Limits the navbar width */
+  /* max-width: 1280px; /* Limits the navbar width */
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
 }
 
-/* Content spacing to avoid overlap with fixed navbar */
-/* .content {
-  padding-top: 80px; /* Adjust this value to add space below the navbar */
-/*} */
+/* Content spacing to avoid overlap with fixed navbar */ */
+ .content {
+  flex: 1;
+  padding-top: 110px;
+  padding-bottom: 0;
+  width: 100%;
+  max-width: 1280px;
+}
 
 /* Logo styling */
 .logo {

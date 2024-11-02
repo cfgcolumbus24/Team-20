@@ -10,17 +10,20 @@ import { Profile } from "./pages/user-profile";
 function App() {
   return (
     <>
-      <div style={{height:'100%'}}>
+      <div style={{height:'100%', width: '100%'
+      }}>
         <Router>
           <Navbar />
-          <div>
-            <Routes>
-              <Route path="/" element={<Main />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/connections" element={<Connections />} />
-              <Route path="/matching" element={<Matching />} />
-              <Route path="/user-profile" element={<Profile />} />
-            </Routes>
+          <div style={{display: 'flex', justifyContent: 'center'}}>
+            <div style={{'max-width': '1280px'}}>
+              <Routes>
+                <Route path="/" element={<Main />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/connections" element={<Connections />} />
+                <Route path="/matching" element={<Matching />} />
+                <Route path="/user-profile" element={<Profile />} />
+              </Routes>
+            </div>
           </div>
         </Router>
       </div>

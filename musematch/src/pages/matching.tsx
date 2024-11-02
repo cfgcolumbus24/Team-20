@@ -4,7 +4,7 @@ import { ImCross } from "react-icons/im";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import logo from "./logo.png";
-import "./Matching.css";
+import "./matching.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 interface Artwork {
