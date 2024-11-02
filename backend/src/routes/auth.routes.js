@@ -72,8 +72,10 @@ router.post("/signup", async (req, res) => {
     setUser(data.localId, {
       email: email,
       name: name,
+      pfp: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/2048px-Default_pfp.svg.png",
       artStyles: [],
       cohorts: [],
+      images: [],
       about: "",
       lookingFor: "",
     });
