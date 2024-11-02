@@ -2,9 +2,15 @@
 // essentially saying yes to technical debt in order to get something done
 
 import express from "express";
-import { firebaseAPIKey } from "../config/apikeys.config.js";
+import { initializeApp } from "firebase/app";
+import { firebaseAPIKey } from "../config/firebase.config.js";
 
 const router = express.Router();
+
+router.get("/test", (req, res) => {
+  const db = getFirestore();
+  console.log(db);
+});
 
 // https://firebase.google.com/docs/reference/rest/auth/#section-sign-in-email-password
 router.post("/login", async (req, res) => {
