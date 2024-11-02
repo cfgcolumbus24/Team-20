@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import { FaHeart } from "react-icons/fa";
-import { ImCross } from "react-icons/im";
+// import { FaHeart } from "react-icons/fa";
+import { IoMdCheckboxOutline } from "react-icons/io";
+import { RxCross2 } from "react-icons/rx";
+//import { ImCross } from "react-icons/im";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import logo from "./logo.png";
@@ -26,9 +28,9 @@ export const Matching = () => {
         { title: "Artwork 1", description: "Description for artwork 1", imgUrl: logo },
         { title: "Artwork 2", description: "Description for artwork 2", imgUrl: logo },
         { title: "Artwork 3", description: "Description for artwork 3", imgUrl: logo },
-        { title: "Artwork 4", description: "Description for artwork 4", imgUrl: logo },
-        { title: "Artwork 5", description: "Description for artwork 5", imgUrl: logo },
-        { title: "Artwork 6", description: "Description for artwork 6", imgUrl: logo }
+        { title: "Artwork 4", description: "Description for artwork 4", imgUrl: logo }
+        // { title: "Artwork 5", description: "Description for artwork 5", imgUrl: logo },
+        // { title: "Artwork 6", description: "Description for artwork 6", imgUrl: logo }
       ];
     
     //makes cards automatically swipe right 
@@ -85,8 +87,8 @@ export const Matching = () => {
                 <span className="tag">Art Type</span>
             </div>
             <div className="like-dislike-container">
-                <ImCross className="like-dislike" onClick={handleXClick} aria-label="Dislike"/>
-                <FaHeart className="like-dislike" onClick={handleHeartClick} aria-label="Love" />
+                <RxCross2 className="like-dislike" onClick={handleXClick} aria-label="Dislike"/>
+                <IoMdCheckboxOutline className="like-dislike" onClick={handleHeartClick} aria-label="Love" />
             </div>
         </div>
         {/* Artwork Section */}
