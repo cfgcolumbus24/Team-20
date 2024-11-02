@@ -33,8 +33,8 @@ export const Matching = () => {
     
     //makes cards automatically swipe right 
     const handleHeartClick = () => {
-        setCurrentX(1000); // Move off-screen to the right
-        setRotation(20);
+        setCurrentX(1500); // Move off-screen to the right
+        setRotation(40);
         console.log("User Swiped Right");
         
         setTimeout(() => {
@@ -46,7 +46,7 @@ export const Matching = () => {
     // Automatically swipe left
     const handleXClick = () => {
     setCurrentX(-1000); // Move off-screen to the left
-    setRotation(-20);
+    setRotation(-40);
     console.log("User Swiped Left");
 
     setTimeout(() => {

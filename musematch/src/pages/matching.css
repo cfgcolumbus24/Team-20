@@ -25,6 +25,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
 
 .card {
@@ -190,4 +191,95 @@ html, body {
 
 .modal-backdrop {
     background-color: rgba(0, 0, 0, 0.5); /* Dim background behind modal */
+}
+
+/*Responsive design for Small Screens*/
+
+@media (max-width: 700px) {
+    
+    html, body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center; /* Horizontally center the box */
+        align-items: flex-start; /* Vertically center the box */
+        background-color: #ffffff; /* Background color for contrast */
+    }
+
+    .App {
+        flex-direction: column;
+        align-items: stretch;
+        padding-top: 300px;
+        padding-bottom: 20px;
+        min-height: 100vh;
+        width: 100%;
+    }
+
+    .card {
+        margin: 0 auto 30px;
+        background-color: white;
+        width: 80%; /* Expands to take most of the screen */
+        height: auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .pfp-image {
+        width: 50%;
+        height: auto;
+        margin: 10px auto;
+        object-fit: contain;
+        border-radius: 50%;
+      }
+
+    .person-name {
+        font-size: 1.5rem;
+    }
+
+    .about-me {
+        font-size: 1rem;
+    }
+
+    .tag {
+        font-size: 0.8rem;
+    }
+
+    .like-dislike {
+        width: 50px;
+        height: auto;
+    }
+
+    .like-dislike-container {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 15px; /* Ensures space above like/dislike buttons */
+    }
+
+    .artwork-section {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .artwork-gallery {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .artwork-image-container {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px; /* Space between artworks */
+    }
+
+    .artwork-image {
+        width: 80%; /* Ensures the artwork resizes correctly */
+    }
+
 }
