@@ -1,9 +1,10 @@
 // Ideally, we'd separate out business layer, but for sake of time we're
 // essentially saying yes to technical debt in order to get something done
 
-const express = require("express");
+import express from "express";
+import { firebaseAPIKey } from "../config/apikeys.config.js";
+
 const router = express.Router();
-const firebaseAPIKey = require("../config/apikeys.config.js");
 
 // https://firebase.google.com/docs/reference/rest/auth/#section-sign-in-email-password
 router.post("/login", async (req, res) => {
@@ -73,4 +74,4 @@ router.post("/signup", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

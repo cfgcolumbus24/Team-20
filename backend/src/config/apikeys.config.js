@@ -1,5 +1,5 @@
-require("dotenv").config;
+import dotenv from "dotenv";
 
-const firebaseAPIKey = process.env.FIREBASE_API_KEY;
+dotenv.config();
 
-module.exports = firebaseAPIKey;
+export const firebaseAPIKey = process.env.FIREBASE_API_KEY;

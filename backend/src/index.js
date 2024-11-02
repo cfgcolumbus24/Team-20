@@ -1,11 +1,8 @@
-// I wish I had time to clean this up...
+import express from "express";
+import dotenv from "dotenv";
+import authRoutes from "./routes/auth.routes.js";
 
-// load data
-const express = require("express");
-const dotenv = require("dotenv");
 dotenv.config();
-
-const authRoutes = require("./routes/auth.routes.js");
 
 // configure app
 const app = express();
@@ -22,4 +19,4 @@ app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
 });
 
-module.exports = app;
+export default app;
