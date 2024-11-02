@@ -14,7 +14,7 @@ html {
   justify-content: center;
   align-items: center;
   background-color: #ffffff; /* Background color for contrast */
-  background-image: linear-gradient(180deg, #a7efff, #2fbdff);
+  background-image: linear-gradient(180deg, #ecfbff 0%, #ecfbff 50%, #54d0f2 100%);
 }
 
 .App {
@@ -42,6 +42,21 @@ html {
   gap: 10px;
 }
 
+.match-popup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #54d0f2;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1050;
+    text-align: center;
+  }
+  
 .pfp-image {
   width: auto;
   max-width: 70%;

@@ -20,7 +20,8 @@ export const Matching = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState("");
-
+  const [showMatchPopup, setShowMatchPopup] = useState(false);
+  
   //Load in artwork Data
   const artworkData: Artwork[] = [
     {
@@ -52,6 +53,9 @@ export const Matching = () => {
     setCurrentX(1500); // Move off-screen to the right
     setRotation(40);
     console.log("User Swiped Right");
+
+    setShowMatchPopup(true);
+    setTimeout(() => setShowMatchPopup(false), 2000);
 
     setTimeout(() => {
       setCurrentX(0);
@@ -85,6 +89,7 @@ export const Matching = () => {
 
   return (
     <div className="App">
+      {showMatchPopup && <div className="match-popup">You matched!</div>}
       <div
         className="card"
         style={{

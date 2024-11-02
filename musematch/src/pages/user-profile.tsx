@@ -58,108 +58,110 @@ export const Profile = () => {
     }
   };
 
-  return token != null ? (
-    <Container maxWidth="sm">
-      <Box
-        sx={{
-          bgcolor: "white",
-          borderRadius: 2,
-          boxShadow: 1,
-          p: 3,
-          mt: 4,
-        }}
-      >
-        <Typography variant="h4" className="profile-title" gutterBottom>
-          Alumni Profile
-        </Typography>
+  return (
+    token ? (
+      <Container maxWidth="sm" sx={{paddingBottom: 5, paddingTop: 5}}>
+        <Box
+          sx={{
+            bgcolor: "white",
+            borderRadius: 2,
+            boxShadow: 1,
+            p: 3,
+            mt: 4,
+          }}
+        >
+          <Typography variant="h4" className="profile-title" gutterBottom>
+            Alumni Profile
+          </Typography>
 
-        <input
-          accept="image/*"
-          style={{ display: "none" }}
-          id="profile-picture-upload"
-          type="file"
-          onChange={handleImageChange}
-        />
+          <input
+            accept="image/*"
+            style={{ display: "none" }}
+            id="profile-picture-upload"
+            type="file"
+            onChange={handleImageChange}
+          />
 
-        <label htmlFor="profile-picture-upload">
-          <Avatar
-            src={profilePicture as string}
-            sx={{
-              width: 100,
-              height: 100,
-              margin: "0 auto",
-              cursor: "pointer",
-            }}
-          />
-        </label>
+          <label htmlFor="profile-picture-upload">
+            <Avatar
+              src={profilePicture as string}
+              sx={{
+                width: 100,
+                height: 100,
+                margin: "0 auto",
+                cursor: "pointer",
+              }}
+            />
+          </label>
 
-        <form onSubmit={handleSubmit} style={{ marginTop: "20px" }}>
-          <TextField
-            label="Name"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <TextField
-            label="Email"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <TextField
-            label="About Me"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            multiline
-            rows={4}
-            value={aboutMe}
-            onChange={(e) => setAboutMe(e.target.value)}
-          />
-          <TextField
-            label="What You're Looking For"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            multiline
-            rows={4}
-            value={lookingFor}
-            onChange={(e) => setLookingFor(e.target.value)}
-          />
-          <Autocomplete
-            multiple
-            options={tags}
-            onChange={(_event, newValue) => {
-              setSelectedTags(newValue);
-            }}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                variant="outlined"
-                label="Select Tags"
-                placeholder="Tags"
-              />
-            )}
-            sx={{ marginTop: "20px" }}
-          />
-          <Button
-            type="submit"
-            variant="contained"
-            color="primary"
-            fullWidth
-            sx={{ mt: 2 }}
-          >
-            Save Profile
-          </Button>
-        </form>
-      </Box>
-    </Container>
-  ) : (
-    <Navigate to={"/login"} replace={true} />
-  );
+          <form onSubmit={handleSubmit} style={{ marginTop: "20px" }}>
+            <TextField
+              label="Name"
+              variant="outlined"
+              fullWidth
+              margin="normal"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <TextField
+              label="Email"
+              variant="outlined"
+              fullWidth
+              margin="normal"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <TextField
+              label="About Me"
+              variant="outlined"
+              fullWidth
+              margin="normal"
+              multiline
+              rows={4}
+              value={aboutMe}
+              onChange={(e) => setAboutMe(e.target.value)}
+            />
+            <TextField
+              label="What You're Looking For"
+              variant="outlined"
+              fullWidth
+              margin="normal"
+              multiline
+              rows={4}
+              value={lookingFor}
+              onChange={(e) => setLookingFor(e.target.value)}
+            />
+            <Autocomplete
+              multiple
+              options={tags}
+              onChange={(_event, newValue) => {
+                setSelectedTags(newValue);
+              }}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  variant="outlined"
+                  label="Select Tags"
+                  placeholder="Tags"
+                />
+              )}
+              sx={{ marginTop: "20px" }}
+            />
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              fullWidth
+              sx={{ mt: 2 }}
+            >
+              Save Profile
+            </Button>
+          </form>
+        </Box>
+      </Container>
+    ) : (
+      <Navigate to={"/login"} replace={true} />
+    )
+  )
 };
