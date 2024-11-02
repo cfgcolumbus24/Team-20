@@ -11,14 +11,15 @@ function App() {
     <>
       <div>
         <Router>
-        <Navbar />
-
-          <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/connections" element={<Connections />} />
-            <Route path="/matching" element={<Matching/>} />
-          </Routes>
+          <Navbar />
+          <div className="content">
+            <Routes>
+              <Route path="/" element={<Main />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/connections" element={<Connections />} />
+              <Route path="/matching" element={<Matching />} />
+            </Routes>
+          </div>
         </Router>
       </div>
     </>
@@ -26,3 +27,4 @@ function App() {
 }
 
 export default App;
+

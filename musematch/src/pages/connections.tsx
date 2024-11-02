@@ -4,6 +4,14 @@ import SearchIcon from "@mui/icons-material/Search";
 import TextField from "@mui/material/TextField";
 import { ExpandMore} from "@mui/icons-material";
 import { Title, Box, FormControl, InputLabel, Select, MenuItem, FormLabel, RadioGroup, FormControlLabel, Radio, Accordion, AccordionDetails, AccordionSummary, Checkbox, Typography } from "@mui/material";
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import * as React from 'react';
+import CssBaseline from '@mui/material/CssBaseline';
+import Container from '@mui/material/Container';
 
 const userCard = () => {
     <div>
@@ -151,6 +159,57 @@ const SearchBar = ({setSearchQuery}) => (
     );
   };
   
+  export const CardContainer = () => {
+    return (
+        <React.Fragment>
+            <CssBaseline />
+            <Container maxWidth="lg">
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'center' }}>
+                    <Card sx={{ maxWidth: 345 }}>
+                        <CardMedia
+                            sx={{ height: 200 }}
+                            image="/example alumni.jpeg"
+                            title="Manuel Acevedo"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                                Manuel Acevedo
+                            </Typography>
+                            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                                Manuel Acevedo is a musician and artist from New York City. He is a graduate of the New School for Jazz and Contemporary Music.
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <Button size="small">Connect</Button>
+                            <Button size="small">Message</Button>
+                        </CardActions>
+                    </Card>
+                    <Card sx={{ maxWidth: 345 }}>
+                        <CardMedia
+                            sx={{ height: 200
+                             }}
+                            image="/example alumni.jpeg"
+                            title="Manuel Acevedo"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                                Manuel Acevedo
+                            </Typography>
+                            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                                Manuel Acevedo is a musician and artist from New York City. He is a graduate of the New School for Jazz and Contemporary Music.
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <Button size="small">Connect</Button>
+                            <Button size="small">Message</Button>
+                        </CardActions>
+                    </Card>
+                </div>
+            </Container>
+        </React.Fragment>
+    );
+}
+
 export const Connections = () => {
     const [searchQuery, setSearchQuery] = useState("");
 
@@ -159,7 +218,8 @@ export const Connections = () => {
             <div>
                 <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
             </div>
-            <Filters/>
+            <Filters />
+            <CardContainer/>
         </div>
     )
 }
