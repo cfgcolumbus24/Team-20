@@ -105,13 +105,6 @@ html, body {
     align-items: center;
 }
 
-.artwork-title {
-    font-size: 1.5rem;
-    color: #242769;
-    font-weight: bold;
-    margin-bottom: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
-}
 
 .artwork-image-container:hover .artwork-title {
     opacity: 1;
@@ -146,10 +139,43 @@ html, body {
     transform: scale(1.05);
 }
 
-.modal-content {
-    background-color: #f8f9fa; /* Light background for readability */
+.artwork-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    color: #242769;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 5px;
 }
 
-.modal-body {
-    color: #333;
+.artwork-image-container:hover .artwork-title {
+    opacity: 1;
+}
+
+.artwork-hover-title {
+    font-size: 1.5rem;
+    color: #242769;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.custom-modal .modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1050; /* Ensure it appears above other content */
+    width: 80%;
+    max-width: 500px;
+}
+
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.5); /* Dim background behind modal */
 }

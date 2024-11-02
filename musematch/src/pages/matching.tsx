@@ -108,19 +108,23 @@ export const Matching = () => {
       </div>
 
       {/* Modal for artwork details */}
-      <Modal show={showModal} onHide={() => setShowModal(false)}>
-        <Modal.Header closeButton>
-          <Modal.Title>Artwork Details</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <p>{modalText}</p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowModal(false)}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      <Modal
+            show={showModal}
+            onHide={() => setShowModal(false)}
+            className="custom-modal"
+        >
+            <Modal.Header closeButton>
+                <Modal.Title>Artwork Details</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <p>{modalText}</p>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button variant="secondary" onClick={() => setShowModal(false)}>
+                    Close
+                </Button>
+            </Modal.Footer>
+        </Modal>
     </div>
   );
 };
