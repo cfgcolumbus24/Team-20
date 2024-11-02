@@ -9,7 +9,7 @@ export const Navbar: React.FC = () => {
       {/* Logo or Brand Name */}
       <div className="navbar-brand">
         <Link to="/" className="nav-link brand">
-          Lower Manhattan Project
+          LMCC MUSE MATCH
         </Link>
       </div>
 
@@ -27,8 +27,13 @@ export const Navbar: React.FC = () => {
         <Link to="/user-profile" className="nav-link">
           <FaUser size="1.1em" className="icon" /> User Profile
         </Link>
-        <Link to="/matching">Matching</Link>
+        <Link to="/matching" className="nav-link">
+          <FaHandshake size="1.1em" className="icon" /> Matching
+        </Link>
       </div>
     </nav>
   );
 };
+
+
+

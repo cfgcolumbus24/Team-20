@@ -1,46 +1,77 @@
+/* Importing font */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;600;700;900&display=swap');
+
 /* Navbar container styling */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: white;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid #ddd;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    font-family: 'Raleway', sans-serif; /* Default font for navbar */
 }
 
 /* Brand styling */
 .navbar-brand .brand {
-  font-size: 1.5rem;
-  color: #007bff;
-  font-weight: bold;
-  text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2em; /* Larger size for emphasis */
+    font-weight: 700; /* Bold weight for brand */
+    color: #2c3e50;
+    text-transform: uppercase;
+    text-decoration: none;
 }
 
+/* Navbar links container */
 .navbar-links {
-  display: flex;
-  gap: 1rem;
+    display: flex;
+    gap: 1rem;
 }
 
+/* Individual link styling using Raleway */
 .nav-link {
-  color: #007bff;
-  font-size: 1rem;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1em;
+    font-weight: 600; /* Semi-bold for the links */
+    color: #2c3e50;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase; /* Uppercase for a cohesive look */
 }
 
 .nav-link:hover {
-  color: #0056b3;
+    color: #0056b3;
 }
 
 /* Icon styling */
 .icon {
-  margin-right: 0.5rem;
+    margin-right: 0.5rem;
 }
+
+/* Custom Raleway weights for other elements */
+.raleway-bold {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900; /* Extra bold for emphasis */
+}
+
+.raleway-light {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300; /* Light weight for subtle text */
+}
+
+
+
+
+
+
+
+
+  
