@@ -1,8 +1,9 @@
 import "./App.css";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Main } from "./pages/main";
 import { Login } from "./pages/login";
 import { Navbar } from "./components/navbar";
+import { Footer } from "./components/footer"; // Import Footer
 import { Connections } from "./pages/connections";
 import { Matching } from "./pages/matching";
 import { Profile } from "./pages/user-profile";
@@ -15,7 +16,7 @@ function App() {
         <Router>
           <Navbar />
           <div style={{display: 'flex', justifyContent: 'center'}}>
-            <div style={{'max-width': '1280px'}}>
+            <div style={{ maxWidth: '1280px'}}>
               <Routes>
                 <Route path="/" element={<Main />} />
                 <Route path="/login" element={<Login />} />
@@ -25,6 +26,7 @@ function App() {
               </Routes>
             </div>
           </div>
+          <Footer />
         </Router>
       </div>
     </>
@@ -32,4 +34,7 @@ function App() {
 }
 
 export default App;
+
+
+
 
