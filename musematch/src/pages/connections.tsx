@@ -332,7 +332,9 @@ export const Connections = () => {
           justifyContent: "space-between",
           alignItems: "flex-start",
           gap: "20px",
+          flexWrap: "wrap-reverse",
         }}
+        className="sm:w-full"
       >
         {/* Left side with SearchBar and Cards */}
         <div style={{ flex: 1 }}>
@@ -348,7 +350,7 @@ export const Connections = () => {
         </div>
 
         {/* Right side with Filters */}
-        <div style={{ width: "250px" }}>
+        <div style={{ width: "250px", alignSelf: "flex-end" }}>
           <Filters />
         </div>
       </div>
