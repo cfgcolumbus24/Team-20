@@ -16,19 +16,24 @@ export const Navbar: React.FC = () => {
       {/* Navigation Links */}
       <div className="navbar-links">
         <Link to="/" className="nav-link">
-          <FaHome size="1.1em" className="icon" /> Home
+          <FaHome size="1.1em" className="icon" />
+          <span className="hidden md:inline-block">Home</span>
         </Link>
         <Link to="/events" className="nav-link">
-          <FaUsers size="1.1em" className="icon" /> Events
+          <FaUsers size="1.1em" className="icon" />
+          <span className="hidden md:inline-block">Events</span>
         </Link>
         <Link to="/connections" className="nav-link">
-          <FaLink size="1.1em" className="icon" /> Connections
+          <FaLink size="1.1em" className="icon" />
+          <span className="hidden md:inline-block">Connections</span>
         </Link>
         <Link to="/user-profile" className="nav-link">
-          <FaUser size="1.1em" className="icon" /> User Profile
+          <FaUser size="1.1em" className="icon" />
+          <span className="hidden md:inline-block">User Profile</span>
         </Link>
         <Link to="/matching" className="nav-link">
-          <FaHandshake size="1.1em" className="icon" /> Matching
+          <FaHandshake size="1.1em" className="icon" />
+          <span className="hidden md:inline-block">Matching</span>
         </Link>
       </div>
     </nav>
