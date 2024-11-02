@@ -2,6 +2,7 @@ import { useState } from "react";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import TextField from "@mui/material/TextField";
+
 import { ExpandMore } from "@mui/icons-material";
 import {
   Box,
@@ -220,7 +221,7 @@ export const CardContainer = () => {
             <Card sx={{ maxWidth: 345 }}>
               <CardMedia
                 sx={{ height: 200 }}
-                image="/example alumni.jpeg"
+                image="/manuel2.jfif"
                 title="Manuel Acevedo"
               />
               <CardContent>
@@ -241,17 +242,16 @@ export const CardContainer = () => {
             <Card sx={{ maxWidth: 345 }}>
               <CardMedia
                 sx={{ height: 200 }}
-                image="/example alumni.jpeg"
-                title="Manuel Acevedo"
+                image="/bony.png"
+                title="Bony Ramirez"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  Manuel Acevedo
+                  Bony Ramirez
                 </Typography>
                 <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                  Manuel Acevedo is a musician and artist from New York City. He
-                  is a graduate of the New School for Jazz and Contemporary
-                  Music.
+                  Bony Ramirez is a self-taught artist. In his latest solo exhibition in the Newark Museum of Art,
+                  he used surrealism to probe the legacies of colonialism and tourism.
                 </Typography>
               </CardContent>
               <CardActions>
@@ -273,17 +273,17 @@ export const CardContainer = () => {
             <Card sx={{ maxWidth: 345 }}>
               <CardMedia
                 sx={{ height: 200 }}
-                image="/example alumni.jpeg"
-                title="Manuel Acevedo"
+                image="/cansu.jpeg"
+                title="Cansu Yıldıran"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  Manuel Acevedo
+                  Cansu Yıldıran
                 </Typography>
                 <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                  Manuel Acevedo is a musician and artist from New York City. He
-                  is a graduate of the New School for Jazz and Contemporary
-                  Music.
+                  Cansu Yıldıran is a photographer from Istanbul. They
+                  are one of the twenty exceptional artists featured in the Foam Talent 
+                  2024-2025 Group Exhibition and Foam Magazine Talent 2024-2025 Issue. 
                 </Typography>
               </CardContent>
               <CardActions>
@@ -294,17 +294,16 @@ export const CardContainer = () => {
             <Card sx={{ maxWidth: 345 }}>
               <CardMedia
                 sx={{ height: 200 }}
-                image="/example alumni.jpeg"
-                title="Manuel Acevedo"
+                image="/emily.jfif"
+                title="Emily Manwaring"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  Manuel Acevedo
+                  Emily Manwaring
                 </Typography>
                 <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                  Manuel Acevedo is a musician and artist from New York City. He
-                  is a graduate of the New School for Jazz and Contemporary
-                  Music.
+                  Emily Manwaringo is an artist who lives and works in Brooklyn, NY. She
+                  is a graduate of The Cooper Union for the Advancement of Science and Art.
                 </Typography>
               </CardContent>
               <CardActions>
