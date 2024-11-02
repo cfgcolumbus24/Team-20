@@ -9,26 +9,27 @@ export const Navbar: React.FC = () => {
       {/* Logo or Brand Name */}
       <div className="navbar-brand">
         <Link to="/" className="nav-link brand">
-          MyApp
+          Lower Manhattan Project
         </Link>
       </div>
 
       {/* Navigation Links */}
       <div className="navbar-links">
         <Link to="/" className="nav-link">
-          <FaHome className="icon" /> Home
+          <FaHome size="1.1em" className="icon" /> Home
         </Link>
         <Link to="/find-people" className="nav-link">
-          <FaUsers className="icon" /> Find People
+          <FaUsers size="1.1em" className="icon" /> Find People
         </Link>
         <Link to="/connections" className="nav-link">
-          <FaLink className="icon" /> Connections
+          <FaLink size="1.1em" className="icon" /> Connections
         </Link>
         <Link to="/user-profile" className="nav-link">
-          <FaUser className="icon" /> User Profile
+          <FaUser size="1.1em" className="icon" /> User Profile
         </Link>
       </div>
     </nav>
   );
 };
+
 

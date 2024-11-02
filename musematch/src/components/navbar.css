@@ -1,10 +1,10 @@
 /* Navbar container styling */
 .navbar {
     display: flex;
-    justify-content: center; /* Centers the links horizontally */
+    justify-content: space-between;
     align-items: center;
     background-color: white;
-    padding: 1rem;
+    padding: 1rem 2rem;
     border-bottom: 1px solid #ddd;
     position: fixed;
     top: 0;
@@ -13,44 +13,36 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   
-  /* Links container styling */
-  .navbar-links {
-    display: flex;
-    gap: 0.75rem; /* Reduces space between the links */
+  /* Brand styling */
+  .navbar-brand .brand {
+    font-size: 1.5rem;
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
   }
   
-  /* Navbar link styling */
+  .navbar-links {
+    display: flex;
+    gap: 1rem;
+  }
+  
   .nav-link {
-    color: #007bff; /* Blue color for the links */
-    padding: 0 0.5rem; /* Reduces padding between links */
-    text-decoration: none;
-    font-weight: 500;
+    color: #007bff;
     font-size: 1rem;
-    transition: color 0.3s;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
   
   .nav-link:hover {
-    color: #0056b3; /* Darker blue on hover */
+    color: #0056b3;
   }
   
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      padding: 1rem;
-    }
-  
-    .navbar-links {
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-    }
-  
-    .nav-link {
-      padding: 0.5rem;
-      width: 100%;
-      text-align: center;
-    }
+  /* Icon styling */
+  .icon {
+    margin-right: 0.5rem;
   }
+  
   
   
