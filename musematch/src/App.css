@@ -14,7 +14,7 @@
   background-color: white;
   padding: 1rem;
   border-bottom: 1px solid #ddd;
-  position: fixed;
+  position: static;
   top: 0;
   left: 50%;
   transform: translateX(-50%); /* Centers the navbar on the page */
@@ -22,12 +22,13 @@
   /*max-width: 1280px; /* Limits the navbar width */
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
 }
 
 /* Content spacing to avoid overlap with fixed navbar */
-.content {
+/* .content {
   padding-top: 80px; /* Adjust this value to add space below the navbar */
-}
+/*} */
 
 /* Logo styling */
 .logo {

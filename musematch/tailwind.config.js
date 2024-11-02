@@ -2,7 +2,9 @@
 module.exports = {
   content: ["./src/**/*.{html,js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      overscrollBehavior: ['hover', 'focus'],
+    },
   },
   plugins: [],
 }
