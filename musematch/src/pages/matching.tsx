@@ -5,6 +5,7 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import logo from "./logo.png";
 import "./Matching.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 interface Artwork {
     title: string;
@@ -90,7 +91,7 @@ export const Matching = () => {
         </div>
         {/* Artwork Section */}
       <div className="artwork-section">
-        <h2 className="artwork-title">Artist's Artwork</h2>
+        <h2 className="artist-title">Artist's Artwork</h2>
         <div className="artwork-gallery">
           {artworkData.map((artwork, index) => (
             <div

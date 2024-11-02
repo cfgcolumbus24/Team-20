@@ -1,3 +1,4 @@
+
 html, body {
     height: 100%;
     width: 100%;
@@ -96,6 +97,7 @@ html, body {
   transform: scale(1.1);
 }
 
+/*Artwork!*/
 .artwork-section {
     width: 60%;
     text-align: left;
@@ -105,10 +107,8 @@ html, body {
     align-items: center;
 }
 
-
 .artwork-image-container:hover .artwork-title {
     opacity: 1;
-    transform: translateY(-100%); /* Move above the artwork */
 }
 
 .artwork-gallery {
@@ -139,19 +139,31 @@ html, body {
     transform: scale(1.05);
 }
 
+.artist-title {
+    font-size: 1.5rem;
+    color: navy;
+    position: relative; 
+    z-index: 10; 
+    margin: 10px 0; 
+    font-weight: bold;
+    text-align: center;
+}
+
 .artwork-title {
     position: absolute;
+    bottom: 10px; /* Adjust as needed */
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #242769;
     font-weight: bold;
-    margin-bottom: 10px;
     padding: 5px 10px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.9); /* White background on hover */
     opacity: 0;
     transition: opacity 0.3s ease;
     border-radius: 5px;
+    margin: 10px 0;
+    text-align: center;
 }
 
 .artwork-image-container:hover .artwork-title {
