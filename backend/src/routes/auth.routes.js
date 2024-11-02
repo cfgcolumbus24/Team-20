@@ -2,7 +2,7 @@
 // essentially saying yes to technical debt in order to get something done
 
 import express from "express";
-import { fetchUser, setUser } from "../api.js";
+import { fetchUser, getId, isValid, setUser } from "../api.js";
 import { firebaseAPIKey } from "../config/firebase.config.js";
 
 const router = express.Router();

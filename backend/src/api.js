@@ -1,4 +1,4 @@
-import { adminDb } from "./config/firebase.config.js";
+import { admin, adminDb } from "./config/firebase.config.js";
 
 export async function fetchUser(localId) {
   try {
@@ -13,6 +13,24 @@ export async function setUser(localId, data) {
   try {
     adminDb.doc(`/users/${localId}`).set(data);
     return await fetchUser(localId);
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function isValid(localId, token) {
+  try {
+    const decoded = await admin.auth().verifyIdToken(token);
+    return decoded.uid == localId;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function getId(token) {
+  try {
+    const decoded = await admin.auth().verifyIdToken(token);
+    return decoded.uid;
   } catch (error) {
     throw error;
   }
