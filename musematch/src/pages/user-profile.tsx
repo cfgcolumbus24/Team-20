@@ -56,7 +56,7 @@ export const Profile = () => {
   };
 
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="sm" sx={{paddingBottom: 5, paddingTop: 5}}>
       <Box
         sx={{
           bgcolor: "white",
