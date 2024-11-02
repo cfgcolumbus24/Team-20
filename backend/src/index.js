@@ -5,15 +5,13 @@ const express = require("express");
 const dotenv = require("dotenv");
 dotenv.config();
 
-// const authRoutes = require('./routes/auth.routes.js');
-const admin = require("./config/firebase.config.js");
+const authRoutes = require("./routes/auth.routes.js");
 
-// configure app routes
+// configure app
 const app = express();
-// app.use("/api/auth", authRoutes);
-app.use("/test", (req, res) => {
-  console.log(admin);
-});
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use("/api/auth", authRoutes);
 app.get("/", (req, res) => {
   res.send("Express Server");
 });
