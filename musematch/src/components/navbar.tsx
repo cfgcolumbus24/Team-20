@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React from "react";
 import { FaHome, FaUser, FaUsers, FaLink } from "react-icons/fa"; // Import icons from react-icons
-import "./Navbar.css";
+import "./navbar.css";
 
 export const Navbar: React.FC = () => {
   return (
