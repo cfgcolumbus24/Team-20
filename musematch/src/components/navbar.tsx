@@ -1,13 +1,23 @@
-import { BrowserRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import React from "react";
+import "./Navbar.css"; // Import the CSS file for styling
 
-export const Navbar = () => {
+export const Navbar: React.FC = () => {
   return (
-    <div>
-      <BrowserRouter>
-        <Link to="/"> Home </Link>
-        <Link to="/login"> Login </Link>
-        <Link to="/connections"> Connections </Link>
-      </BrowserRouter>
+    <div className="navbar">
+      {/* Navigation Links */}
+      <Link to="/" className="nav-link">
+        Home
+      </Link>
+      <Link to="/find-people" className="nav-link">
+        Find People
+      </Link>
+      <Link to="/connections" className="nav-link">
+        Connections
+      </Link>
+      <Link to="/user-profile" className="nav-link">
+        User Profile
+      </Link>
     </div>
   );
 };

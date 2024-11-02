@@ -1,0 +1,48 @@
+/* Navbar container styling */
+.navbar {
+    display: flex;
+    justify-content: center; /* Centers the links horizontally */
+    align-items: center;
+    background-color: white; /* White background for visibility */
+    padding: 1rem;
+    border-bottom: 1px solid #ddd; /* Light border for separation */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for a raised effect */
+  }
+  
+  /* Logo styling */
+  .logo {
+    height: 40px; /* Adjust height to fit */
+    margin-right: 1rem; /* Space between logo and nav links */
+  }
+  
+  /* Navbar link styling */
+  .nav-link {
+    color: #007bff;
+    padding: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: #0056b3;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column; /* Stack items on smaller screens */
+      padding: 0.5rem;
+    }
+  
+    .nav-link {
+      padding: 0.5rem;
+      font-size: 0.9rem; /* Slightly smaller font for mobile */
+    }
+  }
+  
