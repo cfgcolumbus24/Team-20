@@ -44,3 +44,12 @@ export async function fetchEvent(id) {
     throw error;
   }
 }
+
+export async function fetchArtStyles() {
+  try {
+    const styles = await adminDb.collection("artStyles").get();
+    return styles.docs.map((doc) => doc.data().name);
+  } catch (error) {
+    throw error;
+  }
+}

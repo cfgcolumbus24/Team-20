@@ -2,7 +2,8 @@ import express from "express";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth.routes.js";
 import matchingRoutes from "./routes/match.routes.js";
-import eventRoutes from "./routes/event.routes.js";
+import eventRoutes from "./routes/info.routes.js";
+import infoRoutes from "./routes/info.routes.js";
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/auth", authRoutes);
 app.use("/api/match", matchingRoutes);
 app.use("/api/event", eventRoutes);
+app.use("/api/info", infoRoutes);
 
 // start app
 const port = process.env.PORT;

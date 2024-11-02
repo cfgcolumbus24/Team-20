@@ -20,7 +20,7 @@ router.get("/", async (req, res) => {
 
     res.json(await fetchUser(matches[index]));
   } catch (error) {
-    console.error("Login error:", error);
+    console.error("Fetch error:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 });

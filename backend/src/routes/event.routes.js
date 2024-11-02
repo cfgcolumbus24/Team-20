@@ -9,7 +9,7 @@ let index = events.length; // current "recommended events"
 
 const router = express.Router();
 
-router.get("/", async (req, res) => {
+router.get("/next", async (req, res) => {
   try {
     // cycle recommendations circularly
     index++;
@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
 
     res.json(await fetchEvent(events[index]));
   } catch (error) {
-    console.error("Login error:", error);
+    console.error("Fetch error:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 });

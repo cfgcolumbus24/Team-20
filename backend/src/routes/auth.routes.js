@@ -82,7 +82,7 @@ router.post("/signup", async (req, res) => {
     const user = await fetchUser(data.localId);
     res.json({ ...user, token: data.idToken });
   } catch (error) {
-    console.error("Login error:", error);
+    console.error("Signup error:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 });
