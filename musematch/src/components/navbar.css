@@ -35,7 +35,7 @@
 }
 
 /* Individual link styling using Raleway */
-.nav-link {
+.navbar-links .nav-link {
   font-family: "Raleway", sans-serif;
   font-size: 1.1em;
   font-weight: 600; /* Semi-bold for the links */
@@ -45,6 +45,11 @@
   align-items: center;
   gap: 0.5rem !important;
   text-transform: uppercase; /* Uppercase for a cohesive look */
+  transition: color 0.3s; /* Add a transition for a smooth effect */
+}
+
+.navbar-links .nav-link:hover {
+  color: #54d0f2; /* Change to blue on hover */
 }
 
 a.nav-link {
@@ -52,10 +57,6 @@ a.nav-link {
   align-items: center;
   justify-items: center;
   gap: 0.2rem !important;
-}
-
-.nav-link:hover {
-  color: #0056b3;
 }
 
 /* Icon styling */
