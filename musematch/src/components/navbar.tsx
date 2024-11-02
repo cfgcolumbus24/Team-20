@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React from "react";
-import { FaHome, FaUser, FaUsers, FaLink } from "react-icons/fa"; // Import icons from react-icons
+import { FaHome, FaUser, FaUsers, FaLink, FaHandshake } from "react-icons/fa"; // Import icons from react-icons
 import "./navbar.css";
 
 export const Navbar: React.FC = () => {
@@ -34,6 +34,3 @@ export const Navbar: React.FC = () => {
     </nav>
   );
 };
-
-
-

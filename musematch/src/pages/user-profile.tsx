@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import {
   Container,
   TextField,
@@ -7,22 +7,24 @@ import {
   Box,
   Avatar,
   Autocomplete,
-} from '@mui/material';
+} from "@mui/material";
 import "./user-profile.css";
 
 export const Profile = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [aboutMe, setAboutMe] = useState('');
-  const [lookingFor, setLookingFor] = useState('');
-  const [profilePicture, setProfilePicture] = useState<string | ArrayBuffer | null>(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [aboutMe, setAboutMe] = useState("");
+  const [lookingFor, setLookingFor] = useState("");
+  const [profilePicture, setProfilePicture] = useState<
+    string | ArrayBuffer | null
+  >(null);
   const [tags, setTags] = useState<string[]>([]);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   useEffect(() => {
     // Fetch tags from your API and set them in the tags state
     const fetchTags = async () => {
-      const response = await fetch('/api/tags'); // Adjust the URL as needed
+      const response = await fetch("/api/tags"); // Adjust the URL as needed
       const data = await response.json();
       setTags(data);
     };
@@ -33,7 +35,14 @@ export const Profile = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // Handle form submission logic here
-    console.log({ name, email, aboutMe, lookingFor, profilePicture, selectedTags });
+    console.log({
+      name,
+      email,
+      aboutMe,
+      lookingFor,
+      profilePicture,
+      selectedTags,
+    });
   };
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -54,7 +63,7 @@ export const Profile = () => {
           borderRadius: 2,
           boxShadow: 1,
           p: 3,
-          mt: 4
+          mt: 4,
         }}
       >
         <Typography variant="h4" className="profile-title" gutterBottom>
@@ -126,9 +135,14 @@ export const Profile = () => {
               setSelectedTags(newValue);
             }}
             renderInput={(params) => (
-              <TextField {...params} variant="outlined" label="Select Tags" placeholder="Tags" />
+              <TextField
+                {...params}
+                variant="outlined"
+                label="Select Tags"
+                placeholder="Tags"
+              />
             )}
-            sx={{ marginTop: '20px' }}
+            sx={{ marginTop: "20px" }}
           />
           <Button
             type="submit"
